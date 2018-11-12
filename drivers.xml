@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All-tests" parallel="tests" thread-count="1"><test name="device1"><parameter name="deviceName" value="device1"/><parameter name="platform" value="ANDROID"/><parameter name="udid" value="192.168.174.101:5555"/><parameter name="URL" value="http://127.0.0.1:5000/wd/hub"/><parameter name="port" value="8200"/><packages><package name="BaseTest"/></packages></test></suite>

@@ -2,14 +2,15 @@ package BaseTest;
 
 import static org.testng.Assert.assertTrue;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
+import java.net.MalformedURLException;
+
+
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import AppiumDriverSetUp_Lib.*;
@@ -25,21 +26,38 @@ public class BaseTest {
 	//Change to default mobile Layout classes for anything on the screen
 	public PageObject pageObject = null;
 	
-	public AppiumDriverSetup createDrivers = new AppiumDriverSetup();
+	public ParamDriverConstructor driverSetup = new ParamDriverConstructor();
 	
 	
-	@BeforeClass(alwaysRun=true)
-	public void setupDrivers() throws IOException {
+	/*@BeforeSuite(alwaysRun=true)
+	public void suiteSetUp() throws IOException, InterruptedException {
+		System.out.println("Before Suite");
 		createDrivers.makeList();
-		for(AppiumDriver<MobileElement> driver : createDrivers.getActiveList()){
+		System.out.println("Drivers List size:" + createDrivers.getActiveList().size());
+		//System.out.println("Drivers List size:" + AppiumDriverSetup.getActiveList().size());
+		makeFile.setupDriverXMLFile(createDrivers.getActiveList());
+		//createXMLFile();
 		
-			this.driver = driver;
-			TLDriverFactory.setTLDriver(driver);
-			System.out.println("Calling for driver: " + driver.getCapabilities());
-			
-			wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 10);
-			testActivation();
-		}
+		
+		try {
+			makeFile.createDriverFile();
+		} catch (TransformerConfigurationException e) {
+			e.printStackTrace();
+			System.out.println("file not created");
+		} 
+	}  */
+	
+	
+	
+	@BeforeTest(alwaysRun=true)
+	@Parameters({"platform", "udid", "deviceName", "URL", "port"})
+	public void driverSetUp(String platform, String udid, String deviceName, 
+			String URL ,String port) throws MalformedURLException {
+		System.out.println("before test");
+		driver = driverSetup.driverPreTestSetUp(platform, udid, deviceName, URL, port);
+		System.out.println("Testing driver: " + driver.getCapabilities().getCapability("deviceName"));
+		TLDriverFactory.setTLDriver(driver);
+		wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 15);
 	}
 	
 	@Test
@@ -48,8 +66,11 @@ public class BaseTest {
 		
 		pageObject = new PageObject(TLDriverFactory.getTLDriver());
 		pageObject.driver.get("https://www.google.com");
+		System.out.println(pageObject.driver.getCurrentUrl());
+		assertTrue(pageObject.driver.getCurrentUrl().equals("https://www.google.com/"));
 		
 	}
+	
 	
 	
 	

@@ -1,6 +1,8 @@
 package AppiumDriverSetUp_Lib;
 
 
+
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
@@ -12,6 +14,7 @@ public class TLDriverFactory {
 
 	public synchronized static void setTLDriver(AppiumDriver<MobileElement> driver) {
 		tlDriver.set(driver);
+		
 	}
 	
 	public synchronized static AppiumDriver<MobileElement> getTLDriver() {
