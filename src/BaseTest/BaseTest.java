@@ -8,12 +8,13 @@ import java.net.MalformedURLException;
 
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import AppiumDriverSetUp_Lib.*;
+import Browser_Lib.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
@@ -29,27 +30,7 @@ public class BaseTest {
 	public ParamDriverConstructor driverSetup = new ParamDriverConstructor();
 	
 	
-	/*@BeforeSuite(alwaysRun=true)
-	public void suiteSetUp() throws IOException, InterruptedException {
-		System.out.println("Before Suite");
-		createDrivers.makeList();
-		System.out.println("Drivers List size:" + createDrivers.getActiveList().size());
-		//System.out.println("Drivers List size:" + AppiumDriverSetup.getActiveList().size());
-		makeFile.setupDriverXMLFile(createDrivers.getActiveList());
-		//createXMLFile();
-		
-		
-		try {
-			makeFile.createDriverFile();
-		} catch (TransformerConfigurationException e) {
-			e.printStackTrace();
-			System.out.println("file not created");
-		} 
-	}  */
-	
-	
-	
-	@BeforeTest(alwaysRun=true)
+	@BeforeClass(alwaysRun=true)
 	@Parameters({"platform", "udid", "deviceName", "URL", "port"})
 	public void driverSetUp(String platform, String udid, String deviceName, 
 			String URL ,String port) throws MalformedURLException {
@@ -57,7 +38,7 @@ public class BaseTest {
 		driver = driverSetup.driverPreTestSetUp(platform, udid, deviceName, URL, port);
 		System.out.println("Testing driver: " + driver.getCapabilities().getCapability("deviceName"));
 		TLDriverFactory.setTLDriver(driver);
-		wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 15);
+		wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 20);
 	}
 	
 	@Test
@@ -69,8 +50,31 @@ public class BaseTest {
 		System.out.println(pageObject.driver.getCurrentUrl());
 		assertTrue(pageObject.driver.getCurrentUrl().equals("https://www.google.com/"));
 		
+		try {generalWait(6000);} catch (InterruptedException e) {e.printStackTrace();}
+		
+		GoogleMainPage googleMainPage = new GoogleMainPage(TLDriverFactory.getTLDriver());
+		
+		googleMainPage.searchQuery("star wars");
+		
+		GoogleSearchResultsPage resultsPage = new GoogleSearchResultsPage(TLDriverFactory.getTLDriver());
+		
+		try {generalWait(8000);} catch (InterruptedException e) {e.printStackTrace();}
+		
+		resultsPage.swipeVertical(0.7, 0.25, 6000);
+		
+		try {generalWait(4000);} catch (InterruptedException e) {e.printStackTrace();}
+		
 	}
 	
+	public void generalWait(int time) throws InterruptedException {
+		Thread.sleep(time);
+	}
+	
+	@AfterClass(alwaysRun=true)
+	public void closingTime() {
+		TLDriverFactory.getTLDriver().quit();
+		TLDriverFactory.getThread().remove();
+	}
 	
 	
 	

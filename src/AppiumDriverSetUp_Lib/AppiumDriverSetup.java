@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,11 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -33,11 +27,11 @@ public class AppiumDriverSetup {
 	
 	public static int deviceNum = 0;
 	
-	public AppiumDriver<MobileElement> driver;
+	private DesiredCapabilities driverCap;
 	
 	private List<Object> newDevice = new ArrayList<Object>();
 	
-	private static List<AppiumDriver<MobileElement>> activeList = Collections.synchronizedList(new ArrayList<AppiumDriver<MobileElement>>());
+	private static List<DesiredCapabilities> activeList = Collections.synchronizedList(new ArrayList<DesiredCapabilities>());
 	
 	AppOrBrowser determinePlatType = new AppOrBrowser();
 	
@@ -60,8 +54,8 @@ public class AppiumDriverSetup {
 			String [] serialNum = line.replace(" ", "").split("device");
 			newDevice.add(Devices.ANDROID);
 			newDevice.add(serialNum[0]);
-			driver = setCaps((Devices)newDevice.get(0), (String)newDevice.get(1));
-			activeList.add(driver);
+			driverCap = setCaps((Devices)newDevice.get(0), (String)newDevice.get(1));
+			activeList.add(driverCap);
 			newDevice.clear();
 			
 		}
@@ -69,8 +63,8 @@ public class AppiumDriverSetup {
 		//Implement the IOS Process
 	}
 	
-	private AppiumDriver<MobileElement> setCaps(Devices d, String udid) throws MalformedURLException{
-		AppiumDriver<MobileElement> driver = null;
+	private DesiredCapabilities setCaps(Devices d, String udid) throws MalformedURLException{
+		
 		DesiredCapabilities cap = new DesiredCapabilities();
 		
 		String deviceName = "device"+ ++deviceNum;
@@ -81,6 +75,7 @@ public class AppiumDriverSetup {
 			
 			cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 			cap.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, activePorts.assignSystemPort());
+			cap.setCapability("automationName", "UIAutomator2");
 			
 		}
 		if(d == Devices.IOS) {
@@ -100,32 +95,19 @@ public class AppiumDriverSetup {
 		activePorts.generateServer();
 		cap.setCapability("appiumURL", activePorts.getAppiumURL());
 		System.out.println("Argument to driver object : " + activePorts.getAppiumURL() + "\n");
-		switch (d) {
-			case ANDROID:
-				driver = new AndroidDriver<MobileElement>(new URL(activePorts.getAppiumURL()), cap);
-				break;
-			case IOS:
-				driver = new IOSDriver<MobileElement>(new URL(activePorts.getAppiumURL()), cap);
-				break;
-		}
+		
 		activePorts.increasePortNumCheck();
 		
-		return driver;
+		return cap;
 	}
 	
-	public List<AppiumDriver<MobileElement>> getActiveList(){
+	public List<DesiredCapabilities> getActiveList(){
 		return activeList;
 	}
 	
 	
 	
-	public void setTestNGThreadCount() {
-		
-	}
-	
-	public void tearDown() {
-		driver.quit();
-	}
+
 
 }
 

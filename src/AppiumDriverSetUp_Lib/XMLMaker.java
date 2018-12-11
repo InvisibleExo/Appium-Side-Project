@@ -17,13 +17,9 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-
-
 
 public class XMLMaker {
 	
@@ -43,7 +39,7 @@ public class XMLMaker {
 	Transformer transformer;
 	
 	
-	public void setupDriverXMLFile(List <AppiumDriver<MobileElement>> driverList) {
+	public void setupDriverXMLFile(List <DesiredCapabilities> driverList) {
 		
 		System.out.println("List size: "+ driverList.size());
 		try {
@@ -61,44 +57,44 @@ public class XMLMaker {
 			Element suiteElement = doc.createElement("suite");
 			suiteElement.setAttribute("name", "All-tests");
 			
-			for(AppiumDriver<MobileElement> driver: driverList) {
+			for(DesiredCapabilities driverCap: driverList) {
 			
 				Element rootElement = doc.createElement("test");
 				suiteElement.appendChild(rootElement);
-				rootElement.setAttribute("name", (String) driver.getCapabilities().getCapability("deviceId"));
+				rootElement.setAttribute("name", (String) driverCap.getCapability("deviceId"));
 				
 				Element deviceNameEle = doc.createElement("parameter");
 				deviceNameEle.setAttribute("name", "deviceName");
-				deviceNameEle.setAttribute("value", (String) driver.getCapabilities().getCapability("deviceId"));
+				deviceNameEle.setAttribute("value", (String) driverCap.getCapability("deviceId"));
 				rootElement.appendChild(deviceNameEle);
 				
 				Element platformEle = doc.createElement("parameter");
 				platformEle.setAttribute("name", "platform");
-				platformEle.setAttribute("value", driver.getPlatformName()+"");
+				platformEle.setAttribute("value", (String)driverCap.getCapability("platformName"));
 				rootElement.appendChild(platformEle);
 				
 				Element udidEle = doc.createElement("parameter");
 				udidEle.setAttribute("name", "udid");
-				udidEle.setAttribute("value", (String)driver.getCapabilities().getCapability("udid"));
+				udidEle.setAttribute("value", (String) driverCap.getCapability("udid"));
 				rootElement.appendChild(udidEle);
 				
 				Element urlPort = doc.createElement("parameter");
 				urlPort.setAttribute("name", "URL");
-				urlPort.setAttribute("value", (String)driver.getCapabilities().getCapability("appiumURL"));
+				urlPort.setAttribute("value", (String)driverCap.getCapability("appiumURL"));
 				rootElement.appendChild(urlPort);
 				
 				Element devicePort = doc.createElement("parameter");
 				
-				if((driver.getPlatformName()+"").
+				if(((String)driverCap.getCapability("platformName")).
 						toLowerCase().contains("android")) {
 						devicePort.setAttribute("name", "port");
-						devicePort.setAttribute("value", driver.getCapabilities().getCapability("systemPort")+"");
+						devicePort.setAttribute("value", driverCap.getCapability("systemPort")+"");
 						
 				}
-				if ((driver.getPlatformName()+"").
+				if (((String)driverCap.getCapability("platformName")).
 						toLowerCase().contains("ios")) {
 						devicePort.setAttribute("name", "port");
-						devicePort.setAttribute("value", (String)driver.getCapabilities().getCapability("wdaLocalPort"));
+						devicePort.setAttribute("value", (String)driverCap.getCapability("wdaLocalPort"));
 				}
 				
 				rootElement.appendChild(devicePort);

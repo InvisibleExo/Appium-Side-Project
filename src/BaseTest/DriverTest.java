@@ -40,6 +40,8 @@ public class DriverTest {
 		InputStream input = p.getInputStream();
 		testFeed(input, System.out);
 		p.waitFor();
+		p.getInputStream().close();
+		p.getOutputStream().close();
 	}
 	
 	public void testFeed(InputStream in, OutputStream out) throws IOException {

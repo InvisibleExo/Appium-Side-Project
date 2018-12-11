@@ -14,24 +14,31 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class ParamDriverConstructor {
 	
-	public AppiumDriver<MobileElement> driver;
+	private AppiumDriver<MobileElement> driver;
 	
-	public DesiredCapabilities caps;
+	private DesiredCapabilities caps;
 	
 	public AppOrBrowser determinePlatType = new AppOrBrowser();
 	
+	enum Devices{
+		ANDROID, IOS;
+	}
+	
 	public AppiumDriver<MobileElement> driverPreTestSetUp(String platform, String udid, String deviceName, 
 			String URL ,String port) throws MalformedURLException{
-		
+		Devices d = null;
 		caps = new DesiredCapabilities();
 		
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
 		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
 		
 		if(platform.equalsIgnoreCase("Android")) {
+			d = Devices.ANDROID;
 			caps.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, port);
+			caps.setCapability("automationName", "UIAutomator2");
 		}
 		else if(platform.equalsIgnoreCase("IOS")) {
+			d = Devices.IOS;
 			caps.setCapability("wdaLocalPort", port);
 		}
 		
@@ -44,15 +51,17 @@ public class ParamDriverConstructor {
 		
 		caps.setCapability("appiumURL", URL);
 		
-		if(platform.equalsIgnoreCase("Android")) {
-			driver = new AndroidDriver<MobileElement>(new URL(URL), caps);
-		}
-		else if(platform.equalsIgnoreCase("IOS")) {
-			driver = new IOSDriver<MobileElement>(new URL(URL), caps);
+		switch (d) {
+			case ANDROID:
+				driver = new AndroidDriver<MobileElement>(new URL(URL), caps);
+				break;
+			
+			case IOS:
+				driver = new IOSDriver<MobileElement>(new URL(URL), caps);
+				break;
 		}
 		
 		return driver;
-		
 		
 	}
 	
