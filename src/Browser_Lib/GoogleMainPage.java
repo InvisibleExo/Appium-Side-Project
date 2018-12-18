@@ -2,11 +2,11 @@ package Browser_Lib;
 
 import org.openqa.selenium.By;
 
-import AppiumDriverSetUp_Lib.PageObject;
+import AppiumDriverSetUp_Lib.BaseScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class GoogleMainPage extends PageObject {
+public class GoogleMainPage extends BaseScreen {
 
 	private MobileElement searchSection = driver.findElement(By.id("tsf"));
 	

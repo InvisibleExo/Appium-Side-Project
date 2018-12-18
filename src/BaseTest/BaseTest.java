@@ -17,6 +17,7 @@ import AppiumDriverSetUp_Lib.*;
 import Browser_Lib.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.remote.MobileCapabilityType;
 
 
 public class BaseTest {
@@ -25,7 +26,7 @@ public class BaseTest {
 	protected WebDriverWait wait;
 	
 	//Change to default mobile Layout classes for anything on the screen
-	public PageObject pageObject = null;
+	public BaseScreen pageObject = null;
 	
 	public ParamDriverConstructor driverSetup = new ParamDriverConstructor();
 	
@@ -36,19 +37,23 @@ public class BaseTest {
 			String URL ,String port) throws MalformedURLException {
 		System.out.println("before test");
 		driver = driverSetup.driverPreTestSetUp(platform, udid, deviceName, URL, port);
-		System.out.println("Testing driver: " + driver.getCapabilities().getCapability("deviceName"));
+		System.out.println("Testing driver: " + driver.getCapabilities().getCapability(MobileCapabilityType.DEVICE_NAME));
 		TLDriverFactory.setTLDriver(driver);
 		wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 20);
+		
+		
 	}
+	
 	
 	@Test
 	public void testActivation() {
 		assertTrue(driver != null);
 		
-		pageObject = new PageObject(TLDriverFactory.getTLDriver());
-		pageObject.driver.get("https://www.google.com");
-		System.out.println(pageObject.driver.getCurrentUrl());
-		assertTrue(pageObject.driver.getCurrentUrl().equals("https://www.google.com/"));
+		TLDriverFactory.getTLDriver().get("https://www.google.com");
+		pageObject = new BaseScreen(TLDriverFactory.getTLDriver());
+		System.out.println(TLDriverFactory.getTLDriver().getCurrentUrl());
+		
+		assertTrue(pageObject.getCurrentUrl().equals("https://www.google.com/"));
 		
 		try {generalWait(6000);} catch (InterruptedException e) {e.printStackTrace();}
 		
@@ -56,13 +61,41 @@ public class BaseTest {
 		
 		googleMainPage.searchQuery("star wars");
 		
-		GoogleSearchResultsPage resultsPage = new GoogleSearchResultsPage(TLDriverFactory.getTLDriver());
+		try {generalWait(10000);} catch (InterruptedException e) {e.printStackTrace();}
 		
-		try {generalWait(8000);} catch (InterruptedException e) {e.printStackTrace();}
+		GoogleSearchResultsPage resultsPage = new GoogleSearchResultsPage(TLDriverFactory.getTLDriver());
 		
 		resultsPage.swipeVertical(0.7, 0.25, 6000);
 		
 		try {generalWait(4000);} catch (InterruptedException e) {e.printStackTrace();}
+		
+	}
+	
+	@Test
+	public void deviceCommands() {
+		TLDriverFactory.getTLDriver().get("https://www.google.com");
+		
+		try {generalWait(6000);} catch (InterruptedException e) {e.printStackTrace();}
+		
+		GoogleMainPage mainPage = new GoogleMainPage(TLDriverFactory.getTLDriver());
+		
+		mainPage.goBack();
+		
+		try {generalWait(4000);} catch (InterruptedException e) {e.printStackTrace();}
+		
+		mainPage.goHome();
+		
+		try {generalWait(2000);} catch (InterruptedException e) {e.printStackTrace();}
+		//open
+		mainPage.viewActiveAppList();
+		//close
+		mainPage.viewActiveAppList();
+		
+		try {generalWait(2000);} catch (InterruptedException e) {e.printStackTrace();}
+		
+		mainPage.resumeApp("Chrome");
+		
+		try {generalWait(6000);} catch (InterruptedException e) {e.printStackTrace();}
 		
 	}
 	

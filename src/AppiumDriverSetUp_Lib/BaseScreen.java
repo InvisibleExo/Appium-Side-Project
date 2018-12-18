@@ -10,15 +10,17 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 
 
-public class PageObject {
-	public AppiumDriver<MobileElement> driver;
+public class BaseScreen {
+	protected AppiumDriver<MobileElement> driver;
 	protected WebDriverWait wait;
 	private Swipe swipe;
+	private DeviceFunction deviceCommands;
 
 	
-	public PageObject(AppiumDriver<MobileElement> driver){
+	public BaseScreen(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		determineSwipe(this.driver);
+		determineDeviceFunction(this.driver);
 		wait = new WebDriverWait(driver, 15);
 		PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
 	}
@@ -32,6 +34,32 @@ public class PageObject {
 			swipe = new IosSwipe(driver);
 		}
 		
+	}
+	
+	void determineDeviceFunction(AppiumDriver<MobileElement> driver) {
+		if (driver.getCapabilities().getCapability("platformName").equals("Android")) {
+			deviceCommands = new AndroidDeviceFunction(driver);
+		}
+		else if (driver.getCapabilities().getCapability("platformName").equals("IOS")) {
+			//Work on ios device funcitons
+		}
+	}
+	
+	public void goBack() {
+		deviceCommands.goBack();
+	}
+	
+	public void goHome() {
+		deviceCommands.goHome();
+	}
+	
+	public void viewActiveAppList() {
+		deviceCommands.viewActiveAppList();
+	}
+	
+	public void resumeApp(String appName) {
+		
+		deviceCommands.resumeApp(appName);
 	}
 
 	public  void  swipeVertical  (double startPercentage, double finalPercentage, int duration) {
@@ -66,6 +94,12 @@ public class PageObject {
 		swipe.swipeDiagonalDirection(startPercentageX, startPercentageY, finalPercentageX, finalPercentageY, duration, direct);
 		
 	}
+	
+	public String getCurrentUrl() {
+		return driver.getCurrentUrl();
+	}
+	
+	
 	
 	
 	
