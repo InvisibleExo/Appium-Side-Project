@@ -80,7 +80,7 @@ public class ActiveAppiumPorts {
 			Runtime runtime = Runtime.getRuntime();
 			try {
 				runtime.exec("cmd.exe /c start cmd.exe /k \"appium -a " + serverIp + " -p " + portNum + 
-						"--session-override -dc \" {\"\"noReset\"\": \"\"false\"\"}\"\"");
+						" --relaxed-security --session-override -dc \" {\"\"noReset\"\": \"\"false\"\"}\"\"");
 				Thread.sleep(20000);
 			} catch (IOException e) {
 				e.printStackTrace();

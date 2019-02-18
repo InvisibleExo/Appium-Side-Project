@@ -1,7 +1,7 @@
 package AppiumDriverSetUp_Lib;
 
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -12,16 +12,18 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BaseScreen {
 	protected AppiumDriver<MobileElement> driver;
-	protected WebDriverWait wait;
+	protected AppiumDriverWait wait;
 	private Swipe swipe;
 	private DeviceFunction deviceCommands;
+	private NotificationBar notificationBar;
 
 	
 	public BaseScreen(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		determineSwipe(this.driver);
 		determineDeviceFunction(this.driver);
-		wait = new WebDriverWait(driver, 15);
+		determineDeviceNotifications(this.driver);
+		wait = new AppiumDriverWait(this.driver, 30);
 		PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
 	}
 	
@@ -45,6 +47,23 @@ public class BaseScreen {
 		}
 	}
 	
+	void determineDeviceNotifications(AppiumDriver<MobileElement> driver) {
+		if (driver.getCapabilities().getCapability("platformName").equals("Android")) {
+			notificationBar = new AndroidNotificationBar(driver);
+		}
+		else if (driver.getCapabilities().getCapability("platformName").equals("IOS")) {
+			//Work on ios device funcitons
+		}
+	}
+	
+	public void openNotifications() {
+		notificationBar.openNotifications();
+	}
+	
+	public void closeNotifications() {
+		swipe.swipeThroughElementVertical(0.95, 0.1, 2000, notificationBar.getNotificationSection());
+	}
+	
 	public void goBack() {
 		deviceCommands.goBack();
 	}
@@ -66,8 +85,16 @@ public class BaseScreen {
 		swipe.swipeVertical(startPercentage, finalPercentage, duration);
 	} 
 	
+	public void swipeThroughElementVertical (double startPercentage, double endPercentage, int duration, MobileElement element) {
+		swipe.swipeThroughElementVertical(startPercentage, endPercentage, duration, element);
+	}
+	
 	public void swipeHorizontal (double startPercentage, double finalPercentage, int duration) {
 		swipe.swipeHorizontal(startPercentage, finalPercentage, duration);
+	}
+	
+	public void swipeThroughElementHorizontal (double startPercentage, double endPercentage, int duration, MobileElement element) {
+		swipe.swipeThroughElementHorizontal(startPercentage, endPercentage, duration, element);
 	}
 	
 	
@@ -92,11 +119,15 @@ public class BaseScreen {
 			break;
 		}
 		swipe.swipeDiagonalDirection(startPercentageX, startPercentageY, finalPercentageX, finalPercentageY, duration, direct);
-		
 	}
 	
 	public String getCurrentUrl() {
 		return driver.getCurrentUrl();
+	}
+	
+	public void get(String url) {
+		driver.get(url);
+		wait.waitUntilPageLoaded();
 	}
 	
 	

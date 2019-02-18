@@ -1,6 +1,6 @@
 package Browser_Lib;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.support.FindBy;
 
 import AppiumDriverSetUp_Lib.BaseScreen;
 import io.appium.java_client.AppiumDriver;
@@ -8,7 +8,14 @@ import io.appium.java_client.MobileElement;
 
 public class GoogleMainPage extends BaseScreen {
 
-	private MobileElement searchSection = driver.findElement(By.id("tsf"));
+	@FindBy(id = "tsf")
+	private MobileElement searchSection;
+	
+	@FindBy(name = "q")
+	MobileElement searchText;
+	
+	@FindBy(className = "Tg7LZd")
+	MobileElement confirmSearch;
 	
 	public GoogleMainPage(AppiumDriver<MobileElement> driver) {
 		super(driver);
@@ -16,12 +23,11 @@ public class GoogleMainPage extends BaseScreen {
 	}
 	
 	public void searchQuery(String query) {
-		
-		MobileElement searchText = searchSection.findElement(By.name("q"));
-		MobileElement confirmSearch = searchSection.findElement(By.className("Tg7LZd")); 
+		 
 		searchText.click();
 		searchText.sendKeys(query);
 		confirmSearch.click();
+		wait.waitUntilPageLoaded();
 	}
 
 }

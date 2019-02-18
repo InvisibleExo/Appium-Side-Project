@@ -10,3 +10,5 @@ abstract class DeviceFunction {
 	
 	abstract void resumeApp(String appName);
 }
+
+

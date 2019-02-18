@@ -32,24 +32,26 @@ public class ParamDriverConstructor {
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
 		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, platform);
 		
+		
+		//How to fix hang up errors? read ECONNRESET?
 		if(platform.equalsIgnoreCase("Android")) {
 			d = Devices.ANDROID;
-			caps.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, port);
+			caps.setCapability(AndroidMobileCapabilityType.SYSTEM_PORT, Integer.parseInt(port));
 			caps.setCapability("automationName", "UIAutomator2");
 		}
 		else if(platform.equalsIgnoreCase("IOS")) {
 			d = Devices.IOS;
-			caps.setCapability("wdaLocalPort", port);
+			caps.setCapability("wdaLocalPort", Integer.parseInt(port));
 		}
 		
 		caps.setCapability("udid", udid.trim());
 		
-		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "4000");
+		caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 4000);
 		caps.setCapability("noReset", false);
 		
 		caps = determinePlatType.determinePlat(caps);
 		
-		caps.setCapability("appiumURL", URL);
+		//caps.setCapability("appiumURL", URL);
 		
 		switch (d) {
 			case ANDROID:
