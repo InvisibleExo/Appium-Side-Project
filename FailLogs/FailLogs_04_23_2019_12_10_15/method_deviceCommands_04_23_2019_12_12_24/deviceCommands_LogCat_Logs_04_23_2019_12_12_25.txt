@@ -1,0 +1,388 @@
+04-23 07:11:28.370   490   773 I ActivityManager: Start proc 3487:com.android.chrome:sandboxed_process3/u0i18 for webview_service com.android.chrome/org.chromium.content.app.SandboxedProcessService3
+04-23 07:11:28.374  3487  3487 E /system/bin/webview_zygote32: failed to make and chown /acct/uid_99018: Permission denied
+04-23 07:11:28.374  3487  3487 E Zygote  : createProcessGroup(99018, 0) failed: Permission denied
+04-23 07:11:28.376  3487  3487 W /system/bin/webview_zygote32: Unexpected CPU variant for X86 using defaults: x86
+04-23 07:11:28.446  3487  3487 I SamplingProfilerIntegration: Profiling disabled.
+04-23 07:11:28.483   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:11:28.484   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:11:28.636   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:11:28.636   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:11:28.658  3502  3502 E asset   : setgid: Operation not permitted
+04-23 07:11:28.729   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:11:28.729   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:11:29.003   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:11:29.003   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:11:29.193   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:11:29.193   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:11:29.265  3487  3487 I cr_ChildProcessService: Creating new ChildProcessService pid=3487
+04-23 07:11:29.382  3487  3487 E WebViewFactory: can't load with relro file; address space not reserved
+04-23 07:11:29.386  3487  3503 I cr_LibraryLoader: Time to load native libraries: 0 ms (timestamps 1682-1682)
+04-23 07:11:29.396  3487  3503 I chromium: [INFO:library_loader_hooks.cc(42)] Chromium logging enabled: level = 0, default verbosity = 0
+04-23 07:11:29.400  3487  3503 I cr_LibraryLoader: Expected native library version number "72.0.3626.76", actual native library version number "72.0.3626.76"
+04-23 07:11:30.026  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_SUCCESS
+04-23 07:11:30.037  3322  3339 E EGL_emulation: tid 3339: eglChooseConfig(824): error 0x3004 (EGL_BAD_ATTRIBUTE)
+04-23 07:11:30.038  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_BAD_ATTRIBUTE
+04-23 07:11:30.038  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(489)] No suitable EGL configs found.
+04-23 07:11:30.065  3322  3339 D EGL_emulation: eglCreateContext: 0xe1986140: maj 2 min 0 rcv 2
+04-23 07:11:31.029  3258  3287 W cr_ChildProcessConn: onServiceDisconnected (crash or killed by oom): pid=3417
+04-23 07:11:31.031   490   504 I ActivityManager: Process com.android.chrome:sandboxed_process2 (pid 3417) has died: cch  CACC
+04-23 07:11:31.032   490   504 W ActivityManager: Scheduling restart of crashed service com.android.chrome/org.chromium.content.app.SandboxedProcessService2 in 1000ms
+04-23 07:11:31.034   490   512 W system_server: failed to open /acct/uid_99017/pid_3417/cgroup.procs: No such file or directory
+04-23 07:11:37.937  3258  3258 E ActivityThread: Failed to find provider info for com.google.settings
+04-23 07:11:39.325  3187  3218 I appium  : channel read invoked!
+04-23 07:11:39.325  3187  3218 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/appium/device/press_keycode
+04-23 07:11:39.326  3187  3218 I appium  : Calling PressKeyCode...
+04-23 07:11:39.388  3521  3521 E /system/bin/webview_zygote32: failed to make and chown /acct/uid_99019: Permission denied
+04-23 07:11:39.388  3521  3521 E Zygote  : createProcessGroup(99019, 0) failed: Permission denied
+04-23 07:11:39.396  3521  3521 W /system/bin/webview_zygote32: Unexpected CPU variant for X86 using defaults: x86
+04-23 07:11:39.397   490   864 I ActivityManager: Start proc 3521:com.android.chrome:sandboxed_process4/u0i19 for webview_service com.android.chrome/org.chromium.content.app.SandboxedProcessService4
+04-23 07:11:39.408  3258  3258 I cr_ChromeTabbedActivity: Back pressed: Navigating backward
+04-23 07:11:39.413  3187  3218 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":0,"value":true}
+04-23 07:11:39.498  3521  3521 I SamplingProfilerIntegration: Profiling disabled.
+04-23 07:11:39.817   490   773 W ActivityManager: Slow operation: 80ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+04-23 07:11:39.819   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:11:39.820   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:11:39.879  3535  3535 E asset   : setgid: Operation not permitted
+04-23 07:11:39.969  3521  3521 I cr_ChildProcessService: Creating new ChildProcessService pid=3521
+04-23 07:11:40.058  3521  3521 E WebViewFactory: can't load with relro file; address space not reserved
+04-23 07:11:40.079  3521  3536 I cr_LibraryLoader: Time to load native libraries: 1 ms (timestamps 2372-2373)
+04-23 07:11:40.095  3521  3536 I chromium: [INFO:library_loader_hooks.cc(42)] Chromium logging enabled: level = 0, default verbosity = 0
+04-23 07:11:40.111  3521  3536 I cr_LibraryLoader: Expected native library version number "72.0.3626.76", actual native library version number "72.0.3626.76"
+04-23 07:11:40.737  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_SUCCESS
+04-23 07:11:40.746  3322  3339 E EGL_emulation: tid 3339: eglChooseConfig(824): error 0x3004 (EGL_BAD_ATTRIBUTE)
+04-23 07:11:40.746  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_BAD_ATTRIBUTE
+04-23 07:11:40.746  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(489)] No suitable EGL configs found.
+04-23 07:11:40.757  3322  3339 D EGL_emulation: eglCreateContext: 0xdff5c140: maj 2 min 0 rcv 2
+04-23 07:11:41.541  3187  3372 I appium  : channel read invoked!
+04-23 07:11:41.541  3187  3372 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/appium/device/press_keycode
+04-23 07:11:41.542  3187  3372 I appium  : Calling PressKeyCode...
+04-23 07:11:41.557   490   571 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.android.launcher3/.Launcher (has extras)} from uid 1000
+04-23 07:11:41.625  3187  3372 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":0,"value":true}
+04-23 07:11:41.932  3258  3263 I zygote  : Do partial code cache collection, code=123KB, data=83KB
+04-23 07:11:41.934  3258  3263 I zygote  : After code cache collection, code=123KB, data=83KB
+04-23 07:11:41.934  3258  3263 I zygote  : Increasing code cache capacity to 512KB
+04-23 07:11:41.955  3187  3374 I appium  : channel read invoked!
+04-23 07:11:41.958  3187  3374 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/appium/device/press_keycode
+04-23 07:11:41.979  3187  3374 I appium  : Calling PressKeyCode...
+04-23 07:11:41.983   490   645 I ActivityManager: Process com.android.chrome:sandboxed_process3 (pid 3487) has died: cch  CACC
+04-23 07:11:41.984   490   512 W system_server: failed to open /acct/uid_99018/pid_3487/cgroup.procs: No such file or directory
+04-23 07:11:42.005   490   645 W ActivityManager: Scheduling restart of crashed service com.android.chrome/org.chromium.content.app.SandboxedProcessService3 in 1000ms
+04-23 07:11:42.492  3187  3374 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":0,"value":true}
+04-23 07:11:42.729   490   504 I ActivityManager: START u0 {flg=0x10804000 cmp=com.android.systemui/.recents.RecentsActivity} from uid 10024
+04-23 07:11:42.749  3187  3379 I appium  : channel read invoked!
+04-23 07:11:42.749  3187  3379 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/appium/device/press_keycode
+04-23 07:11:42.750  3187  3379 I appium  : Calling PressKeyCode...
+04-23 07:11:42.757   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 790 ms
+04-23 07:11:42.789  3187  3379 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":0,"value":true}
+04-23 07:11:42.946   490   511 W Looper  : Dispatch took 153ms on android.ui, h=Handler (com.android.server.am.ActivityManagerService$UiHandler) {7bda9a9} cb=null msg=53
+04-23 07:11:43.040  3187  3384 I appium  : channel read invoked!
+04-23 07:11:43.041  3187  3384 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/appium/device/press_keycode
+04-23 07:11:43.042  3187  3384 I appium  : Calling PressKeyCode...
+04-23 07:11:43.054   490   510 I ActivityManager: Start proc 3551:com.android.chrome:sandboxed_process3/u0i20 for webview_service com.android.chrome/org.chromium.content.app.SandboxedProcessService3
+04-23 07:11:43.065  3551  3551 E /system/bin/webview_zygote32: failed to make and chown /acct/uid_99020: Permission denied
+04-23 07:11:43.065  3551  3551 E Zygote  : createProcessGroup(99020, 0) failed: Permission denied
+04-23 07:11:43.075  3551  3551 W /system/bin/webview_zygote32: Unexpected CPU variant for X86 using defaults: x86
+04-23 07:11:43.076  3187  3384 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":0,"value":true}
+04-23 07:11:43.212  3551  3551 I SamplingProfilerIntegration: Profiling disabled.
+04-23 07:11:43.257   490   510 W ActivityManager: Activity pause timeout for ActivityRecord{73a6c97 u0 com.android.launcher3/.Launcher t193}
+04-23 07:11:43.376  3187  3416 I appium  : channel read invoked!
+04-23 07:11:43.376  3187  3416 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:43.377  3187  3416 I appium  : Find element command
+04-23 07:11:43.378  3187  3416 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:43.497   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 733 ms
+04-23 07:11:44.091   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 586 ms
+04-23 07:11:44.093   353   891 E IPCThreadState: binder thread pool (4 threads) starved for 1008 ms
+04-23 07:11:44.117  1165  1289 E EGL_emulation: tid 1289: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 07:11:44.117  1165  1289 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xdef7cf80, error=EGL_BAD_MATCH
+04-23 07:11:44.132   490  1737 W zygote  : Long monitor contention with owner Binder:490_E (1738) at int com.android.server.wm.WindowManagerService.relayoutWindow(com.android.server.wm.Session, android.view.IWindow, int, android.view.WindowManager$LayoutParams, int, int, int, int, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.util.MergedConfiguration, android.view.Surface)(WindowManagerService.java:1898) waiters=0 in boolean com.android.server.wm.WindowManagerService.containsShowWhenLockedWindow(android.os.IBinder) for 852ms
+04-23 07:11:44.134   490   503 W zygote  : Long monitor contention with owner Binder:490_E (1738) at int com.android.server.wm.WindowManagerService.relayoutWindow(com.android.server.wm.Session, android.view.IWindow, int, android.view.WindowManager$LayoutParams, int, int, int, int, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.graphics.Rect, android.util.MergedConfiguration, android.view.Surface)(WindowManagerService.java:1898) waiters=1 in android.view.MagnificationSpec com.android.server.wm.WindowManagerService$LocalService.getCompatibleMagnificationSpecForWindow(android.os.IBinder) for 716ms
+04-23 07:11:44.134   490   551 I Choreographer: Skipped 78 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:44.157   490  1737 W ActivityManager: Slow operation: 902ms so far, now at attachApplicationLocked: after mServices.attachApplicationLocked
+04-23 07:11:44.157   490   510 W zygote  : Long monitor contention with owner Binder:490_D (1737) at void com.android.server.am.ActivityManagerService.attachApplication(android.app.IApplicationThread)(ActivityManagerService.java:7079) waiters=0 in void com.android.server.am.ActivityStack$ActivityStackHandler.handleMessage(android.os.Message) for 900ms
+04-23 07:11:44.247  3566  3566 E asset   : setgid: Operation not permitted
+04-23 07:11:44.335  3551  3551 I cr_ChildProcessService: Creating new ChildProcessService pid=3551
+04-23 07:11:44.385  3551  3551 E WebViewFactory: can't load with relro file; address space not reserved
+04-23 07:11:44.860   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 725 ms
+04-23 07:11:44.871   490   551 I Choreographer: Skipped 41 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:45.460   353   891 E IPCThreadState: binder thread pool (4 threads) starved for 575 ms
+04-23 07:11:45.700  3258  3287 I cr_BindingManager: onTrimMemory: level=20, size=2
+04-23 07:11:45.702  3258  3287 W cr_ChildProcessConn: onServiceDisconnected (crash or killed by oom): pid=3487
+04-23 07:11:45.710  3258  3258 I Choreographer: Skipped 220 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:45.720   490  1153 I ActivityManager: Killing 3551:com.android.chrome:sandboxed_process3/u0a68i20 (adj 0): isolated not needed
+04-23 07:11:45.721   490   512 W system_server: failed to open /acct/uid_99020/pid_3551/cgroup.procs: No such file or directory
+04-23 07:11:45.780   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 370 ms
+04-23 07:11:45.929   629   918 E EGL_emulation: tid 918: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 07:11:45.925   490   551 I Choreographer: Skipped 62 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:45.929   629   918 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xcb3cd100, error=EGL_BAD_MATCH
+04-23 07:11:46.454   490   551 I Choreographer: Skipped 30 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:46.487   490   510 W ActivityManager: Activity pause timeout for ActivityRecord{a6869f5 u0 com.android.systemui/.recents.RecentsActivity t195}
+04-23 07:11:46.650  1165  1165 I Choreographer: Skipped 145 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:46.751  3187  3416 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":0,"value":{"ELEMENT":"1e05fca1-b12c-45e9-b099-26109362cc34"}}
+04-23 07:11:47.071  3187  3214 I appium  : channel read invoked!
+04-23 07:11:47.072  3187  3214 I appium  : channel read: GET /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element/1e05fca1-b12c-45e9-b099-26109362cc34/attribute/displayed
+04-23 07:11:47.072  3187  3214 I appium  : get attribute of element command
+04-23 07:11:47.080  3258  3258 I Choreographer: Skipped 32 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:47.096   490  1153 D WindowManager: relayoutVisibleWindow: Window{327465f u0 com.android.chrome/com.google.android.apps.chrome.Main EXITING} mAnimatingExit=true, mRemoveOnExit=false, mDestroying=false
+04-23 07:11:47.130  3187  3214 E appium  : Stale Element Reference Exception:
+04-23 07:11:47.130  3187  3214 E appium  : androidx.test.uiautomator.StaleObjectException
+04-23 07:11:47.130  3187  3214 E appium  : 	at androidx.test.uiautomator.UiObject2.getAccessibilityNodeInfo(UiObject2.java:647)
+04-23 07:11:47.130  3187  3214 E appium  : 	at androidx.test.uiautomator.UiObject2.hashCode(UiObject2.java:105)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.lang.Object.toString(Object.java:273)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.util.Formatter$FormatSpecifier.printString(Formatter.java:2977)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.util.Formatter$FormatSpecifier.print(Formatter.java:2854)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.util.Formatter.format(Formatter.java:2523)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.util.Formatter.format(Formatter.java:2458)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.lang.String.format(String.java:2770)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.utils.ReflectionUtils.invoke(ReflectionUtils.java:71)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.core.AccessibilityNodeInfoGetter.fromUiObject(AccessibilityNodeInfoGetter.java:47)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.core.AccessibilityNodeInfoGetter.fromUiObject(AccessibilityNodeInfoGetter.java:41)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.model.UiObject2Element.getAttribute(UiObject2Element.java:134)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.handler.GetElementAttribute.safeHandle(GetElementAttribute.java:29)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+04-23 07:11:47.130  3187  3214 E appium  : 	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+04-23 07:11:47.130  3187  3214 E appium  : 	at java.lang.Thread.run(Thread.java:764)
+04-23 07:11:47.150  1165  1289 W OpenGLRenderer: Incorrectly called buildLayer on View: ShortcutAndWidgetContainer, destroying layer...
+04-23 07:11:47.151  1165  1289 W OpenGLRenderer: Incorrectly called buildLayer on View: ShortcutAndWidgetContainer, destroying layer...
+04-23 07:11:47.167  3187  3214 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":10,"value":"androidx.test.uiautomator.StaleObjectException\n\tat androidx.test.uiautomator.UiObject2.getAccessibilityNodeInfo(UiObject2.java:647)\n\tat androidx.test.uiautomator.UiObject2.hashCode(UiObject2.java:105)\n\tat java.lang.Object.toString(Object.java:273)\n\tat java.util.Formatter$FormatSpecifier.printString(Formatter.java:2977)\n\tat java.util.Formatter$FormatSpecifier.print(Formatter.java:2854)\n\tat java.util.Formatter.format(Formatter.java:2523)\n\tat java.util.Formatter.format(Formatter.java:2458)\n\tat java.lang.String.format(String.java:2770)\n\tat io.appium.uiautomator2.utils.ReflectionUtils.invoke(ReflectionUtils.java:71)\n\tat io.appium.uiautomator2.core.AccessibilityNodeInfoGetter.fromUiObject(AccessibilityNodeInfoGetter.java:47)\n\tat io.appium.uiautomator2.core.AccessibilityNodeInfoGetter.fromUiObject(AccessibilityNodeInfoGetter.java:41)\n\tat io.appium.uiautomator2.model.UiObject2Element.getAttribute(UiObject2Element.java:134)\n\tat io.appium.uiautomator2.handler.GetElementAttribute.safeHandle(GetElementAttribute.java:29)\n\tat io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:37)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:252)\n\tat io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:243)\n\tat io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:44)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)\n\tat io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)\n\tat io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)\n\tat io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)\n\tat io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)\n\tat io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)\n\tat io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)\n\tat io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)\n\tat io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)\n\tat io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)\n\tat io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)\n\tat io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)\n\tat io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(Default
+04-23 07:11:47.336  3258  3286 E EGL_emulation: tid 3286: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 07:11:47.336  3258  3286 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xcd0b28e0, error=EGL_BAD_MATCH
+04-23 07:11:47.337   353   353 D SurfaceFlinger: duplicate layer name: changing SurfaceView - com.android.chrome/com.google.android.apps.chrome.Main to SurfaceView - com.android.chrome/com.google.android.apps.chrome.Main#2
+04-23 07:11:47.543   353   353 D SurfaceFlinger: duplicate layer name: changing Background for - SurfaceView - com.android.chrome/com.google.android.apps.chrome.Main to Background for - SurfaceView - com.android.chrome/com.google.android.apps.chrome.Main#2
+04-23 07:11:47.603  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_SUCCESS
+04-23 07:11:47.625  3322  3339 E EGL_emulation: tid 3339: eglChooseConfig(824): error 0x3004 (EGL_BAD_ATTRIBUTE)
+04-23 07:11:47.628  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_BAD_ATTRIBUTE
+04-23 07:11:47.628  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(489)] No suitable EGL configs found.
+04-23 07:11:47.662   629   629 E BufferItemConsumer: [unnamed-629-18] Failed to release buffer: Unknown error -1 (1)
+04-23 07:11:47.674   629   629 I Choreographer: Skipped 101 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:47.793  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_SUCCESS
+04-23 07:11:47.797  3322  3339 E EGL_emulation: tid 3339: eglChooseConfig(824): error 0x3004 (EGL_BAD_ATTRIBUTE)
+04-23 07:11:47.798  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(336)] eglChooseConfig failed with error EGL_BAD_ATTRIBUTE
+04-23 07:11:47.798  3322  3339 E chromium: [ERROR:gl_surface_egl.cc(489)] No suitable EGL configs found.
+04-23 07:11:47.836  3322  3339 D EGL_emulation: eglCreateContext: 0xdff5c560: maj 2 min 0 rcv 2
+04-23 07:11:48.221  3187  3216 I appium  : channel read invoked!
+04-23 07:11:48.222  3187  3216 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:48.225  3187  3216 I appium  : Find element command
+04-23 07:11:48.232  3187  3216 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:48.351   490   551 I Choreographer: Skipped 32 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:48.518   629   629 E BufferItemConsumer: [unnamed-629-19] Failed to release buffer: Unknown error -1 (1)
+04-23 07:11:48.704   629   629 E BufferItemConsumer: [unnamed-629-20] Failed to release buffer: Unknown error -1 (1)
+04-23 07:11:48.715  3258  3258 W GooglePlayServicesUtil: Google Play Store is missing.
+04-23 07:11:48.716  3258  3258 W GooglePlayServicesUtil: Google Play Store is missing.
+04-23 07:11:48.716   629   629 I Choreographer: Skipped 61 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:48.729  3258  3258 I Choreographer: Skipped 68 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:49.373   629  1739 I zygote  : Explicit concurrent copying GC freed 7504(415KB) AllocSpace objects, 0(0B) LOS objects, 50% free, 3MB/7MB, paused 9.563ms total 121.020ms
+04-23 07:11:49.521   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 131 ms
+04-23 07:11:49.654  3258  3258 I Choreographer: Skipped 55 frames!  The application may be doing too much work on its main thread.
+04-23 07:11:49.713  3187  3216 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:50.487  3187  3218 I appium  : channel read invoked!
+04-23 07:11:50.489  3187  3218 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:50.489  3187  3218 I appium  : Find element command
+04-23 07:11:50.493  3187  3218 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:50.511   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 105 ms
+04-23 07:11:50.557  3187  3218 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:51.238  3187  3372 I appium  : channel read invoked!
+04-23 07:11:51.238  3187  3372 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:51.238  3187  3372 I appium  : Find element command
+04-23 07:11:51.240  3187  3372 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:51.279  3187  3372 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:51.899  3187  3374 I appium  : channel read invoked!
+04-23 07:11:51.901  3187  3374 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:51.902  3187  3374 I appium  : Find element command
+04-23 07:11:51.905  3187  3374 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:51.947  3187  3374 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:52.574  3187  3379 I appium  : channel read invoked!
+04-23 07:11:52.576  3187  3379 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:52.578  3187  3379 I appium  : Find element command
+04-23 07:11:52.592  3187  3379 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:52.637  3187  3379 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:53.240  3187  3384 I appium  : channel read invoked!
+04-23 07:11:53.241  3187  3384 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:53.241  3187  3384 I appium  : Find element command
+04-23 07:11:53.243  3187  3384 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:53.291  3187  3384 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:53.883  3187  3416 I appium  : channel read invoked!
+04-23 07:11:53.884  3187  3416 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:53.884  3187  3416 I appium  : Find element command
+04-23 07:11:53.885  3187  3416 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:53.930  3187  3416 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:54.557  3187  3214 I appium  : channel read invoked!
+04-23 07:11:54.558  3187  3214 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:54.559  3187  3214 I appium  : Find element command
+04-23 07:11:54.561  3187  3214 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:54.606  3187  3214 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:55.249  3187  3216 I appium  : channel read invoked!
+04-23 07:11:55.249  3187  3216 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:55.250  3187  3216 I appium  : Find element command
+04-23 07:11:55.251  3187  3216 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:55.279  3187  3216 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:55.876  3187  3218 I appium  : channel read invoked!
+04-23 07:11:55.877  3187  3218 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:55.878  3187  3218 I appium  : Find element command
+04-23 07:11:55.879  3187  3218 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:55.941  3187  3218 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:56.561  3187  3372 I appium  : channel read invoked!
+04-23 07:11:56.562  3187  3372 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:56.563  3187  3372 I appium  : Find element command
+04-23 07:11:56.567  3187  3372 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:56.609  3187  3372 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:57.212  3187  3374 I appium  : channel read invoked!
+04-23 07:11:57.213  3187  3374 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:57.214  3187  3374 I appium  : Find element command
+04-23 07:11:57.219  3187  3374 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:57.262  3187  3374 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:57.908  3187  3379 I appium  : channel read invoked!
+04-23 07:11:57.910  3187  3379 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:57.918  3187  3379 I appium  : Find element command
+04-23 07:11:57.930  3187  3379 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:57.934  3187  3192 I zygote  : Do full code cache collection, code=121KB, data=75KB
+04-23 07:11:57.949  3187  3192 I zygote  : After code cache collection, code=96KB, data=52KB
+04-23 07:11:57.969  3187  3379 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:57.989  3187  3198 I zygote  : Background concurrent copying GC freed 26742(1366KB) AllocSpace objects, 1(16KB) LOS objects, 51% free, 1447KB/2MB, paused 2.804ms total 130.032ms
+04-23 07:11:58.601  3187  3384 I appium  : channel read invoked!
+04-23 07:11:58.602  3187  3384 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:58.602  3187  3384 I appium  : Find element command
+04-23 07:11:58.603  3187  3384 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:58.619  3187  3384 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:59.309  3187  3416 I appium  : channel read invoked!
+04-23 07:11:59.310  3187  3416 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:59.311  3187  3416 I appium  : Find element command
+04-23 07:11:59.321  3187  3416 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:59.351  3187  3416 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:11:59.961  3187  3214 I appium  : channel read invoked!
+04-23 07:11:59.962  3187  3214 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:11:59.962  3187  3214 I appium  : Find element command
+04-23 07:11:59.964  3187  3214 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:11:59.992  3187  3214 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:00.009   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:12:00.010   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:12:00.116   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:12:00.116   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:12:00.158   490   509 E memtrack: Couldn't load memtrack module
+04-23 07:12:00.158   490   509 W android.os.Debug: failed to get memory consumption info: -1
+04-23 07:12:00.571  3187  3216 I appium  : channel read invoked!
+04-23 07:12:00.571  3187  3216 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:00.571  3187  3216 I appium  : Find element command
+04-23 07:12:00.572  3187  3216 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:00.698  3187  3216 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:01.276  3187  3218 I appium  : channel read invoked!
+04-23 07:12:01.276  3187  3218 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:01.276  3187  3218 I appium  : Find element command
+04-23 07:12:01.277  3187  3218 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:01.313  3187  3218 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:01.940  3187  3372 I appium  : channel read invoked!
+04-23 07:12:01.940  3187  3372 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:01.940  3187  3372 I appium  : Find element command
+04-23 07:12:01.941  3187  3372 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:01.960  3187  3372 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:02.683  3187  3374 I appium  : channel read invoked!
+04-23 07:12:02.684  3187  3374 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:02.685  3187  3374 I appium  : Find element command
+04-23 07:12:02.686  3187  3374 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:02.728  3187  3374 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:03.340  3187  3379 I appium  : channel read invoked!
+04-23 07:12:03.341  3187  3379 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:03.341  3187  3379 I appium  : Find element command
+04-23 07:12:03.346  3187  3379 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:03.390  3187  3379 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:03.961  3187  3384 I appium  : channel read invoked!
+04-23 07:12:03.961  3187  3384 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:03.962  3187  3384 I appium  : Find element command
+04-23 07:12:03.969  3187  3384 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:04.010  3187  3384 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:04.633  3187  3416 I appium  : channel read invoked!
+04-23 07:12:04.633  3187  3416 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:04.634  3187  3416 I appium  : Find element command
+04-23 07:12:04.636  3187  3416 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:04.670  3187  3416 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:05.285  3187  3214 I appium  : channel read invoked!
+04-23 07:12:05.286  3187  3214 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:05.286  3187  3214 I appium  : Find element command
+04-23 07:12:05.287  3187  3214 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:05.320  3187  3214 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:05.993  3187  3216 I appium  : channel read invoked!
+04-23 07:12:05.994  3187  3216 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:05.995  3187  3216 I appium  : Find element command
+04-23 07:12:05.997  3187  3216 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:06.053  3187  3216 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:06.674  3187  3218 I appium  : channel read invoked!
+04-23 07:12:06.675  3187  3218 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:06.675  3187  3218 I appium  : Find element command
+04-23 07:12:06.678  3187  3218 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:06.765  3187  3218 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:07.410  3187  3372 I appium  : channel read invoked!
+04-23 07:12:07.417  3187  3372 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:07.421  3187  3372 I appium  : Find element command
+04-23 07:12:07.427  3187  3372 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:07.464  3187  3372 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:08.056  3187  3374 I appium  : channel read invoked!
+04-23 07:12:08.057  3187  3374 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:08.057  3187  3374 I appium  : Find element command
+04-23 07:12:08.058  3187  3374 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:08.079  3187  3374 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:08.709  3187  3379 I appium  : channel read invoked!
+04-23 07:12:08.709  3187  3379 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:08.709  3187  3379 I appium  : Find element command
+04-23 07:12:08.710  3187  3379 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:08.742  3187  3379 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:09.353  3187  3384 I appium  : channel read invoked!
+04-23 07:12:09.353  3187  3384 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:09.354  3187  3384 I appium  : Find element command
+04-23 07:12:09.355  3187  3384 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:09.389  3187  3384 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:10.028  3187  3416 I appium  : channel read invoked!
+04-23 07:12:10.028  3187  3416 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:10.030  3187  3416 I appium  : Find element command
+04-23 07:12:10.034  3187  3416 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:10.075  3187  3416 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:10.717  3187  3214 I appium  : channel read invoked!
+04-23 07:12:10.717  3187  3214 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:10.718  3187  3214 I appium  : Find element command
+04-23 07:12:10.719  3187  3214 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:10.740  3187  3214 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:11.315  3187  3216 I appium  : channel read invoked!
+04-23 07:12:11.315  3187  3216 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:11.316  3187  3216 I appium  : Find element command
+04-23 07:12:11.323  3187  3216 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:11.356  3187  3216 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:12.038  3187  3218 I appium  : channel read invoked!
+04-23 07:12:12.038  3187  3218 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:12.046  3187  3218 I appium  : Find element command
+04-23 07:12:12.053  3187  3218 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:12.092  3187  3218 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:12.727  3187  3372 I appium  : channel read invoked!
+04-23 07:12:12.731  3187  3372 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:12.737  3187  3372 I appium  : Find element command
+04-23 07:12:12.749  3187  3372 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:12.820  3187  3372 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}
+04-23 07:12:13.482  3187  3374 I appium  : channel read invoked!
+04-23 07:12:13.483  3187  3374 I appium  : channel read: POST /wd/hub/session/20087a24-f149-47a5-bc2d-e98645681b02/element
+04-23 07:12:13.490  3187  3374 I appium  : Find element command
+04-23 07:12:13.502  3187  3374 I appium  : find element command using 'accessibility id' with selector 'Chrome'.
+04-23 07:12:13.579  3187  3374 I appium  : AppiumResponse: {"sessionId":"20087a24-f149-47a5-bc2d-e98645681b02","status":7,"value":"An element could not be located on the page using the given search parameters."}

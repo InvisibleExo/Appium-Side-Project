@@ -1,0 +1,42 @@
+04-23 06:54:17.767  2698  2698 E ActivityThread: Failed to find provider info for com.google.settings
+04-23 06:54:20.109   622   622 I LatinIME: Starting input. Cursor position = 0,0
+04-23 06:54:20.773  2698  2698 I Choreographer: Skipped 39 frames!  The application may be doing too much work on its main thread.
+04-23 06:54:21.402   349   349 E hw-IPCThreadState: binder thread pool (1 threads) starved for 507 ms
+04-23 06:54:21.993   349   349 E hw-IPCThreadState: binder thread pool (1 threads) starved for 476 ms
+04-23 06:54:22.263   349   349 E hw-IPCThreadState: binder thread pool (1 threads) starved for 260 ms
+04-23 06:54:22.334   622  2435 E EGL_emulation: tid 2435: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 06:54:22.335   622  2435 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xe8257940, error=EGL_BAD_MATCH
+04-23 06:54:23.358   627   627 W zygote  : Long monitor contention with owner Binder:627_2 (654) at boolean android.os.MessageQueue.enqueueMessage(android.os.Message, long)(MessageQueue.java:543) waiters=0 in android.os.Message android.os.MessageQueue.next() for 148ms
+04-23 06:54:28.988   500   518 E memtrack: Couldn't load memtrack module
+04-23 06:54:28.988   500   518 W android.os.Debug: failed to get memory consumption info: -1
+04-23 06:54:29.223   500   518 E memtrack: Couldn't load memtrack module
+04-23 06:54:29.223   500   518 W android.os.Debug: failed to get memory consumption info: -1
+04-23 06:54:29.361   500   518 E memtrack: Couldn't load memtrack module
+04-23 06:54:29.367   500   518 W android.os.Debug: failed to get memory consumption info: -1
+04-23 06:54:29.515   500   518 E memtrack: Couldn't load memtrack module
+04-23 06:54:29.515   500   518 W android.os.Debug: failed to get memory consumption info: -1
+04-23 06:54:30.166  2698  2709 I zygote  : Background concurrent copying GC freed 40567(1634KB) AllocSpace objects, 0(0B) LOS objects, 50% free, 1608KB/3MB, paused 11.035ms total 195.642ms
+04-23 06:54:41.244   373   373 D gps_vbox86: gps_set_position_mode not implemented
+04-23 06:54:41.261   373   373 D gps_vbox86: Gps navigation has started
+04-23 06:54:41.270   373   373 D gps_vbox86: Gps navigation has stopped
+04-23 06:54:51.377  2628  2639 I zygote  : Background concurrent copying GC freed 37353(1543KB) AllocSpace objects, 0(0B) LOS objects, 52% free, 1370KB/2MB, paused 19.112ms total 123.171ms
+04-23 06:54:53.611  2698  2698 I chromium: [INFO:CONSOLE(545)] "Powered by AMP ? HTML – Version 1904091426070", source: https://cdn.ampproject.org/rtv/011904091426070/v0.js.br (545)
+04-23 06:54:56.119  2628  2815 I appium  : channel read invoked!
+04-23 06:54:56.123  2628  2815 I appium  : channel read: POST /wd/hub/session/9592faa7-79b2-44fd-b994-7f83c189a4ec/touch/perform
+04-23 06:54:56.138  2628  2815 I appium  : JSON Payload : {"startX":0,"startY":0,"endX":0,"endY":0,"steps":168}
+04-23 06:54:56.366   627   627 D StatusBar: disable<e i a s b h r c s q >
+04-23 06:54:56.808   349   349 E hw-IPCThreadState: binder thread pool (1 threads) starved for 346 ms
+04-23 06:54:56.891   627   919 E EGL_emulation: tid 919: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 06:54:56.891   627   919 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xe5a4a1a0, error=EGL_BAD_MATCH
+04-23 06:54:57.336   627   627 I Choreographer: Skipped 56 frames!  The application may be doing too much work on its main thread.
+04-23 06:54:57.342   627   627 D StatusBar: disable<e i a s b h r c s q >
+04-23 06:54:57.755   349   349 E hw-IPCThreadState: binder thread pool (1 threads) starved for 257 ms
+04-23 06:54:58.170   349   349 E hw-IPCThreadState: binder thread pool (1 threads) starved for 288 ms
+04-23 06:54:58.182   627   627 W View    : couldn't find view with id 2131361948
+04-23 06:55:00.010   500   518 E memtrack: Couldn't load memtrack module
+04-23 06:55:00.010   500   518 W android.os.Debug: failed to get memory consumption info: -1
+04-23 06:55:03.526   627   627 D StatusBar: disable<e i a s b h r c s q >
+04-23 06:55:03.851   627   627 D StatusBar: disable<e i a s b h r c s q >
+04-23 06:55:04.055   627   919 E EGL_emulation: tid 919: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 06:55:04.056   627   919 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xe5a4a3a0, error=EGL_BAD_MATCH
+04-23 06:55:04.232  2628  2815 I appium  : AppiumResponse: {"sessionId":"9592faa7-79b2-44fd-b994-7f83c189a4ec","status":0,"value":true}

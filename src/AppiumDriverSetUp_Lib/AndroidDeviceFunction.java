@@ -23,7 +23,7 @@ public class AndroidDeviceFunction extends DeviceFunction {
 	AndroidDeviceFunction(AppiumDriver<MobileElement> driver){
 		this.driver = (AndroidDriver<MobileElement>) driver;
 		defaultContext = this.driver.getContext();
-		wait = new AppiumDriverWait(this.driver, 40);
+		wait = new AppiumDriverWait(this.driver, 30);
 	}
 	
 	
@@ -49,7 +49,7 @@ public class AndroidDeviceFunction extends DeviceFunction {
 		
 		viewActiveAppList();
 		driver.context("NATIVE_APP");
-		MobileElement app = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(MobileBy.AccessibilityId(appName)));
+		MobileElement app = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(MobileBy.AccessibilityId(appName)));
 		app.click();
 		driver.context(defaultContext);
 		wait.waitUntilPageLoaded();

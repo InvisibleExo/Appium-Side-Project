@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -15,9 +16,9 @@ public class AndroidNotificationBar extends NotificationBar{
 	private static String nativeContext = "NATIVE_APP";
 	private static String defaultContext;
 	
-	protected MobileElement notificationSection;
+	private AppiumDriverWait wait;
 	
-	private MobileElement closeNotifications;
+	protected MobileElement notificationSection;
 	
 	private MobileElement notificationCommandsHeader;
 	private List<MobileElement> notificationCommandList;
@@ -28,19 +29,15 @@ public class AndroidNotificationBar extends NotificationBar{
 	AndroidNotificationBar(AppiumDriver<MobileElement> driver){
 		this.driver = (AndroidDriver<MobileElement>)driver;
 		defaultContext = driver.getContext();
-		
+		wait = new AppiumDriverWait(this.driver, 40);
 	}
 	
 	void openNotifications() {
 		driver.openNotifications();
 		driver.context(nativeContext);
-		notificationSection = driver.findElement(By.id("com.android.systemui:id/quick_settings_container"));
-		notificationCommandsHeader = driver.findElement(By.id("com.android.systemui:id/tile_page"));
-		listNotificationSystemCommands();
-		notificationEventListHeader = driver.findElement(By.id("com.android.systemui:id/notification_stack_scroller"));
-		closeNotifications = driver.findElementByAccessibilityId("Close quick settings.");
+		notificationSection = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.android.systemui:id/quick_settings_container")));
+		notificationEventListHeader = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.android.systemui:id/notification_stack_scroller")));
 	}
-
 	void listNotificationSystemCommands() {
 		notificationCommandList = notificationCommandsHeader.findElements(By.className("android.widget.FrameLayout"));
 		
@@ -48,6 +45,10 @@ public class AndroidNotificationBar extends NotificationBar{
 	
 	public MobileElement getNotificationSection() {
 		return notificationSection;
+	}
+	
+	public MobileElement getNotificationScroller() {
+		return notificationEventListHeader;
 	}
 	
 	void selectSystemCommand(String systemName) {

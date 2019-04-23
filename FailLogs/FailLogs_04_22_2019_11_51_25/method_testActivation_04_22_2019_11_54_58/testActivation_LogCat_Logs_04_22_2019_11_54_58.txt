@@ -1,0 +1,26 @@
+04-23 06:53:56.590   617   617 I LatinIME: Starting input. Cursor position = 0,0
+04-23 06:53:57.003  2607  2607 W zygote  : Long monitor contention with owner Binder:2607_1 (2619) at boolean android.os.MessageQueue.enqueueMessage(android.os.Message, long)(MessageQueue.java:543) waiters=0 in android.os.Message android.os.MessageQueue.next() for 109ms
+04-23 06:53:57.142   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 102 ms
+04-23 06:53:57.161   353   847 E IPCThreadState: binder thread pool (4 threads) starved for 108 ms
+04-23 06:53:58.041   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 898 ms
+04-23 06:53:58.748   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 692 ms
+04-23 06:53:59.537   343   343 E hw-IPCThreadState: binder thread pool (1 threads) starved for 756 ms
+04-23 06:53:59.601   629   629 I Choreographer: Skipped 46 frames!  The application may be doing too much work on its main thread.
+04-23 06:53:59.610   617  2422 E EGL_emulation: tid 2422: eglSurfaceAttrib(1210): error 0x3009 (EGL_BAD_MATCH)
+04-23 06:53:59.610   617  2422 W OpenGLRenderer: Failed to set EGL_SWAP_BEHAVIOR on surface 0xe19bcfe0, error=EGL_BAD_MATCH
+04-23 06:53:59.771   490  1174 W zygote  : Long monitor contention with owner main (490) at android.os.Message android.os.MessageQueue.next()(MessageQueue.java:327) waiters=0 in boolean android.os.MessageQueue.enqueueMessage(android.os.Message, long) for 176ms
+04-23 06:54:01.106  2680  2680 I Choreographer: Skipped 44 frames!  The application may be doing too much work on its main thread.
+04-23 06:54:02.442  2607  2618 I zygote  : Background concurrent copying GC freed 30176(1318KB) AllocSpace objects, 0(0B) LOS objects, 53% free, 1329KB/2MB, paused 20.198ms total 502.311ms
+04-23 06:54:07.496  2680  2691 I zygote  : Background concurrent copying GC freed 37941(1556KB) AllocSpace objects, 0(0B) LOS objects, 49% free, 1607KB/3MB, paused 2.331ms total 360.179ms
+04-23 06:54:23.523   490   509 I UsageStatsService: User[0] Flushing usage stats to disk
+04-23 06:54:27.391  2680  2680 E ActivityThread: Failed to find provider info for com.google.settings
+04-23 06:54:28.926   369   369 E hw-IPCThreadState: binder thread pool (1 threads) starved for 288 ms
+04-23 06:54:30.016   367   367 D gps_vbox86: gps_set_position_mode not implemented
+04-23 06:54:30.108   367   367 D gps_vbox86: Gps navigation has started
+04-23 06:54:30.113   367   367 D gps_vbox86: Gps navigation has stopped
+04-23 06:54:33.710   490   503 D WificondControl: Scan result ready event
+04-23 06:54:38.412  2680  2680 I chromium: [INFO:CONSOLE(545)] "Powered by AMP ? HTML – Version 1904091426070", source: https://cdn.ampproject.org/rtv/011904091426070/v0.js.br (545)
+04-23 06:54:39.573  2607  2804 I appium  : channel read invoked!
+04-23 06:54:39.574  2607  2804 I appium  : channel read: POST /wd/hub/session/e06b15d9-be6e-4f0c-b7d9-1573ea50c8e3/touch/perform
+04-23 06:54:39.575  2607  2804 I appium  : JSON Payload : {"startX":0,"startY":1646,"endX":0,"endY":588,"steps":168}
+04-23 06:54:45.621  2607  2804 I appium  : AppiumResponse: {"sessionId":"e06b15d9-be6e-4f0c-b7d9-1573ea50c8e3","status":0,"value":true}

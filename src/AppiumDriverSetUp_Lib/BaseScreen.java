@@ -1,5 +1,6 @@
 package AppiumDriverSetUp_Lib;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -61,7 +62,8 @@ public class BaseScreen {
 	}
 	
 	public void closeNotifications() {
-		swipe.swipeThroughElementVertical(0.95, 0.1, 2000, notificationBar.getNotificationSection());
+		swipe.swipeThroughElementVertical(0.90, 0.15, 2000, notificationBar.getNotificationScroller());
+		
 	}
 	
 	public void goBack() {
@@ -98,27 +100,45 @@ public class BaseScreen {
 	}
 	
 	
-	enum diagonalDirection{
-		nw, sw, ne, se;
+	public enum Direction{
+		nw, sw, ne, se, up, down;
 	}
 	public void swipeDiagonal (double startPercentageX, double startPercentageY, double finalPercentageX, 
-		double finalPercentageY, int duration, diagonalDirection dir) {
-		Swipe.diagonalDirection direct = null;
+		double finalPercentageY, int duration, Direction dir) {
+		Swipe.Direction direct = null;
 		switch (dir) {
 		case nw:
-			direct = Swipe.diagonalDirection.nw;
+			direct = Swipe.Direction.nw;
 			break;
 		case sw:
-			direct = Swipe.diagonalDirection.sw;
+			direct = Swipe.Direction.sw;
 			break;
 		case ne:
-			direct = Swipe.diagonalDirection.ne;
+			direct = Swipe.Direction.ne;
 			break;
 		case se:
-			direct = Swipe.diagonalDirection.se;
+			direct = Swipe.Direction.se;
+			break;
+		default:
 			break;
 		}
 		swipe.swipeDiagonalDirection(startPercentageX, startPercentageY, finalPercentageX, finalPercentageY, duration, direct);
+	}
+	
+	public MobileElement swipeUntilFound(By method, int attempts, MobileElement targetElement, Direction dir) {
+		Swipe.Direction direct= null;
+		switch (dir) {
+		case up:
+			direct = Swipe.Direction.up;
+			break;
+		case down: 
+			direct = Swipe.Direction.down;
+			break;
+		default:
+			break;
+		}
+		
+		return targetElement = swipe.swipeUntilFound(method, attempts, targetElement, direct);
 	}
 	
 	public String getCurrentUrl() {

@@ -33,8 +33,6 @@ public class AppiumDriverSetup {
 	
 	private static List<DesiredCapabilities> activeList = Collections.synchronizedList(new ArrayList<DesiredCapabilities>());
 	
-	AppOrBrowser determinePlatType = new AppOrBrowser();
-	
 	ActiveAppiumPorts activePorts = new ActiveAppiumPorts();
 	
 	public void makeList () throws IOException {
@@ -86,10 +84,8 @@ public class AppiumDriverSetup {
 		}
 		cap.setCapability("deviceId", deviceName);
 		cap.setCapability("udid", udid.trim());
-		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "4000");
+		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "5000");
 		cap.setCapability("noReset", false);
-		
-		cap = determinePlatType.determinePlat(cap);
 		
 		//Generate AppiumPorts Class and retrieve generated port number.
 		activePorts.generateServer();

@@ -22,7 +22,7 @@ public class DriverTest {
 		
 		DriverTest startTest = new DriverTest();
 		startTest.driverFileSetup();
-		startTest.runSuite();
+		startTest.runSuite(args);
 		
 		startTest = null;
 	}
@@ -33,9 +33,15 @@ public class DriverTest {
 		makeFile.createDriverFile();
 	}
 	
-	public void runSuite() throws IOException, InterruptedException {
+	public void runSuite(String args[]) throws IOException, InterruptedException {
+		int additionArgCount = 0;
+		String additionArgLine = "";
+		for (;additionArgCount < args.length; additionArgCount++) {
+			additionArgLine += " " + args[additionArgCount];
+		}
 		Runtime rt = Runtime.getRuntime();
-		String cmd = "cmd /c mvn test -Dplat="+System.getProperty("plat");
+		String cmd = "cmd /c mvn test" + additionArgLine;
+		System.out.println(cmd);
 		Process p = rt.exec(cmd);
 		InputStream input = p.getInputStream();
 		testFeed(input, System.out);

@@ -14,13 +14,13 @@ abstract class Swipe {
 	
 	abstract void swipeThroughElementHorizontal(double startPercentage, double endPercentage, int duration, MobileElement element);
 	
-	enum diagonalDirection{
-		nw, sw, ne, se;
+	enum Direction{
+		nw, sw, ne, se, up, down;
 	}
 	abstract void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX, 
-			double finalPercentageY, int duration, diagonalDirection dir);
+			double finalPercentageY, int duration, Direction dir);
 	
-	abstract void swipeUntilFound(By method, int attempts, MobileElement targetElement);
+	abstract MobileElement swipeUntilFound(By method, int attempts, MobileElement targetElement, Direction dir);
 	
 	abstract void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement);
 }

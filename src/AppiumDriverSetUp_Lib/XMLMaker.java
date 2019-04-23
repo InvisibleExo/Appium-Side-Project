@@ -23,8 +23,6 @@ import org.w3c.dom.Element;
 
 public class XMLMaker {
 	
-	
-	
 	public DocumentBuilderFactory docDriverSetup;
 	
 	public DocumentBuilder driverSetup;
@@ -33,14 +31,12 @@ public class XMLMaker {
 	
 	public Document doc;
 	
-	
 	TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	
 	Transformer transformer;
 	
-	
 	public void setupDriverXMLFile(List <DesiredCapabilities> driverList) {
-		
+	
 		System.out.println("List size: "+ driverList.size());
 		try {
 			
@@ -59,29 +55,29 @@ public class XMLMaker {
 			
 			for(DesiredCapabilities driverCap: driverList) {
 			
-				Element rootElement = doc.createElement("test");
-				suiteElement.appendChild(rootElement);
-				rootElement.setAttribute("name", (String) driverCap.getCapability("deviceId"));
+				Element testElement = doc.createElement("test");
+				suiteElement.appendChild(testElement);
+				testElement.setAttribute("name", (String) driverCap.getCapability("deviceId"));
 				
 				Element deviceNameEle = doc.createElement("parameter");
 				deviceNameEle.setAttribute("name", "deviceName");
 				deviceNameEle.setAttribute("value", (String) driverCap.getCapability("deviceId"));
-				rootElement.appendChild(deviceNameEle);
+				testElement.appendChild(deviceNameEle);
 				
 				Element platformEle = doc.createElement("parameter");
 				platformEle.setAttribute("name", "platform");
 				platformEle.setAttribute("value", (String)driverCap.getCapability("platformName"));
-				rootElement.appendChild(platformEle);
+				testElement.appendChild(platformEle);
 				
 				Element udidEle = doc.createElement("parameter");
 				udidEle.setAttribute("name", "udid");
 				udidEle.setAttribute("value", (String) driverCap.getCapability("udid"));
-				rootElement.appendChild(udidEle);
+				testElement.appendChild(udidEle);
 				
 				Element urlPort = doc.createElement("parameter");
 				urlPort.setAttribute("name", "URL");
 				urlPort.setAttribute("value", (String)driverCap.getCapability("appiumURL"));
-				rootElement.appendChild(urlPort);
+				testElement.appendChild(urlPort);
 				
 				Element devicePort = doc.createElement("parameter");
 				
@@ -97,13 +93,15 @@ public class XMLMaker {
 						devicePort.setAttribute("value", (String)driverCap.getCapability("wdaLocalPort"));
 				}
 				
-				rootElement.appendChild(devicePort);
+				testElement.appendChild(devicePort);
 				
 				Element packages = doc.createElement("packages");
-				rootElement.appendChild(packages);
-				Element packageName = doc.createElement("package");
-				packageName.setAttribute("name", "BaseTest");
-				packages.appendChild(packageName);
+				testElement.appendChild(packages);
+				String testPackageName = System.getProperty("package");
+				Element browserOrAppTestPackage = doc.createElement("package");
+				browserOrAppTestPackage.setAttribute("name", testPackageName);
+				packages.appendChild(browserOrAppTestPackage);
+				
 				
 				
 				connectedDevices++;

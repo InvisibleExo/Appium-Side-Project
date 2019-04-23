@@ -17,4 +17,6 @@ abstract class NotificationBar {
 	abstract void openNotificationEvent(String eventName);
 
 	abstract MobileElement getNotificationSection();
+	
+	abstract MobileElement getNotificationScroller();
 }

@@ -27,13 +27,6 @@ public class IosSwipe extends Swipe {
 	}
 
 	@Override
-	void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX,
-			double finalPercentageY, int duration, diagonalDirection dir) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	void swipeThroughElementVertical(double startPercentage, double endPercentage, int duration,
 			MobileElement element) {
 		// TODO Auto-generated method stub
@@ -47,14 +40,22 @@ public class IosSwipe extends Swipe {
 		
 	}
 
-	
-	void swipeUntilFound(By method, int attempts, MobileElement targetElement) {
+	@Override
+	void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement) {
+	void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX,
+			double finalPercentageY, int duration, Direction dir) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	MobileElement swipeUntilFound(By method, int attempts, MobileElement targetElement, Direction dir) {
+		return targetElement;
 		// TODO Auto-generated method stub
 		
 	}

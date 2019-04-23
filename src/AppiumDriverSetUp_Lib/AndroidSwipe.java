@@ -1,15 +1,28 @@
 package AppiumDriverSetUp_Lib;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.AppiumFluentWait;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+
+
 
 public class AndroidSwipe extends Swipe {
 	
@@ -18,13 +31,13 @@ public class AndroidSwipe extends Swipe {
 	private static String nativeContext = "NATIVE_APP";
 	private static String defaultContext;
 	
+	
 	AndroidSwipe(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		defaultContext = this.driver.getContext();
 	}
 	
 	void swipeVertical(double startPercentage, double finalPercentage, int duration) {
-		driver.context(nativeContext);
 		size = driver.manage().window().getSize();
 		int width = (int) (size.width/2);
 		int startPoint = (int) (size.getHeight() * startPercentage);
@@ -35,13 +48,10 @@ public class AndroidSwipe extends Swipe {
 			.moveTo(PointOption.point(width, endPoint))
 			.release()
 			.perform();
-		driver.context(defaultContext);
-		
 	}
 
 	
 	void swipeHorizontal(double startPercentage, double finalPercentage, int duration) {
-		driver.context(nativeContext);
 		size = driver.manage().window().getSize();
 		int height = (int) (size.height/2);
 		int startPoint = (int) (size.getWidth() * startPercentage);
@@ -52,13 +62,11 @@ public class AndroidSwipe extends Swipe {
 			.moveTo(PointOption.point(endPoint, height))
 			.release()
 			.perform();
-		driver.context(defaultContext);
 	}
 
 	
 	void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX, 
-			double finalPercentageY, int duration, diagonalDirection dir){
-		driver.context(nativeContext);
+			double finalPercentageY, int duration, Direction dir){
 		size = driver.manage().window().getSize();
 		int startX;
 		int startY;
@@ -78,7 +86,6 @@ public class AndroidSwipe extends Swipe {
 					.moveTo(PointOption.point(startX, startY))
 					.release()
 					.perform();
-				driver.context(defaultContext);
 				break;
 				
 			case sw:
@@ -93,7 +100,6 @@ public class AndroidSwipe extends Swipe {
 					.moveTo(PointOption.point(startX, endY))
 					.release()
 					.perform();
-				driver.context(defaultContext);
 				break;
 				
 			case ne:
@@ -108,7 +114,6 @@ public class AndroidSwipe extends Swipe {
 					.moveTo(PointOption.point(endX, endY))
 					.release()
 					.perform();
-				driver.context(defaultContext);
 				break;
 				
 			case se:
@@ -123,15 +128,15 @@ public class AndroidSwipe extends Swipe {
 					.moveTo(PointOption.point(endX, startY))
 					.release()
 					.perform();
-				driver.context(defaultContext);
 				break;
+		default:
+			break;
 		}
 		
 	}
 
 	void swipeThroughElementVertical(double startPercentage, double endPercentage, int duration,
 			MobileElement element) {
-		driver.context(nativeContext);
 		size = element.getSize();
 		int width = (int) (size.width/2);
 		int startPoint = (int) (size.getHeight() * startPercentage);
@@ -142,13 +147,10 @@ public class AndroidSwipe extends Swipe {
 			.moveTo(PointOption.point(width, endPoint))
 			.release()
 			.perform();
-		driver.context(defaultContext);
-		
 	}
 
 	void swipeThroughElementHorizontal(double startPercentage, double endPercentage, int duration,
 			MobileElement element) {
-		driver.context(nativeContext);
 		size = element.getSize();
 		int height = (int) (size.height/2);
 		int startPoint = (int) (size.getWidth() * startPercentage);
@@ -159,15 +161,30 @@ public class AndroidSwipe extends Swipe {
 			.moveTo(PointOption.point(endPoint, height))
 			.release()
 			.perform();
-		driver.context(defaultContext);
-		
 	}
 	
-	//Work on determining when to scroll up and when to scroll down based on if app/webpage has hit the boundary
-	void swipeUntilFound(By method, int attempts, MobileElement targetElement) {
+	MobileElement swipeUntilFound(By method, int attempts, MobileElement targetElement, Direction dir) {
 		int limitCount = 0;
-		while (limitCount < attempts || driver.findElements(method).isEmpty()) {
-			swipeVertical(0.8, 0.25, 3000);
+		double startScrollPoint = 0;
+		double endScrollPoint = 0;
+		switch (dir) {
+			case up:
+				startScrollPoint = 0.35;
+				endScrollPoint = 0.8;
+				break;
+			case down:
+				startScrollPoint = 0.8;
+				endScrollPoint = 0.35;
+				break;
+		default:
+			System.out.println("This method only supports directions up and down");
+			break;
+		}
+		
+		List<MobileElement> searchAfterSwipe = driver.findElements(method);
+		while (searchAfterSwipe.isEmpty() && limitCount < attempts ) {
+			swipeVertical(startScrollPoint, endScrollPoint, 3000);
+			searchAfterSwipe = driver.findElements(method);
 			limitCount++;
 		}
 		if(limitCount == attempts) {
@@ -176,6 +193,7 @@ public class AndroidSwipe extends Swipe {
 			targetElement = driver.findElement(method);
 			System.out.println("Element " + method.toString() + " was found.");
 		}
+		return targetElement;
 	}
 
 	void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement) {
