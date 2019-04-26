@@ -1,22 +1,14 @@
 package AppiumDriverSetUp_Lib;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.text.SimpleDateFormat;
+
 import java.time.Duration;
-import java.util.Calendar;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.AppiumFluentWait;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.touch.WaitOptions;
@@ -28,6 +20,7 @@ public class AndroidSwipe extends Swipe {
 	
 	private AppiumDriver<MobileElement> driver;
 	private Dimension size;
+	private Dimension elementSize;
 	private static String nativeContext = "NATIVE_APP";
 	private static String defaultContext;
 	
@@ -35,10 +28,12 @@ public class AndroidSwipe extends Swipe {
 	AndroidSwipe(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		defaultContext = this.driver.getContext();
+		this.driver.context(nativeContext);
+		size = this.driver.manage().window().getSize();
+		this.driver.context(defaultContext);
 	}
 	
 	void swipeVertical(double startPercentage, double finalPercentage, int duration) {
-		size = driver.manage().window().getSize();
 		int width = (int) (size.width/2);
 		int startPoint = (int) (size.getHeight() * startPercentage);
 		int endPoint = (int) (size.getHeight() * finalPercentage);
@@ -52,7 +47,6 @@ public class AndroidSwipe extends Swipe {
 
 	
 	void swipeHorizontal(double startPercentage, double finalPercentage, int duration) {
-		size = driver.manage().window().getSize();
 		int height = (int) (size.height/2);
 		int startPoint = (int) (size.getWidth() * startPercentage);
 		int endPoint = (int) (size.getWidth() * finalPercentage);
@@ -67,7 +61,6 @@ public class AndroidSwipe extends Swipe {
 	
 	void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX, 
 			double finalPercentageY, int duration, Direction dir){
-		size = driver.manage().window().getSize();
 		int startX;
 		int startY;
 		int endX;
@@ -137,10 +130,10 @@ public class AndroidSwipe extends Swipe {
 
 	void swipeThroughElementVertical(double startPercentage, double endPercentage, int duration,
 			MobileElement element) {
-		size = element.getSize();
-		int width = (int) (size.width/2);
-		int startPoint = (int) (size.getHeight() * startPercentage);
-		int endPoint = (int) (size.getHeight() * endPercentage);
+		elementSize = element.getSize();
+		int width = (int) (elementSize.width/2);
+		int startPoint = (int) (elementSize.getHeight() * startPercentage);
+		int endPoint = (int) (elementSize.getHeight() * endPercentage);
 		new AndroidTouchAction(driver)
 			.press(PointOption.point(width, startPoint))
 			.waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))
@@ -151,10 +144,10 @@ public class AndroidSwipe extends Swipe {
 
 	void swipeThroughElementHorizontal(double startPercentage, double endPercentage, int duration,
 			MobileElement element) {
-		size = element.getSize();
-		int height = (int) (size.height/2);
-		int startPoint = (int) (size.getWidth() * startPercentage);
-		int endPoint = (int) (size.getWidth() * endPercentage);
+		elementSize = element.getSize();
+		int height = (int) (elementSize.height/2);
+		int startPoint = (int) (elementSize.getWidth() * startPercentage);
+		int endPoint = (int) (elementSize.getWidth() * endPercentage);
 		new AndroidTouchAction(driver)
 			.press(PointOption.point(startPoint, height))
 			.waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))

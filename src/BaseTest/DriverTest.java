@@ -16,7 +16,7 @@ public class DriverTest {
 	
 	public XMLMaker makeFile = new XMLMaker();
 	//Call this file from cmd:
-	//mvn exec:java -Dexec.mainClass="BaseTest.DriverTest" -Dplat=chrome
+	//mvn exec:java -Dexec.mainClass="BaseTest.DriverTest" -Dexec.args="-Dplat=chrome -Dpackage=Brower_Test -Dgetlayout=yes" -Dpackage="Browser_Test"
 	public static void main(String [] args) throws TransformerConfigurationException, IOException, InterruptedException {
 		System.out.println("Setting up drivers:");
 		
@@ -41,7 +41,6 @@ public class DriverTest {
 		}
 		Runtime rt = Runtime.getRuntime();
 		String cmd = "cmd /c mvn test" + additionArgLine;
-		System.out.println(cmd);
 		Process p = rt.exec(cmd);
 		InputStream input = p.getInputStream();
 		testFeed(input, System.out);
