@@ -1,11 +1,13 @@
 package AppiumDriverSetUp_Lib;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -33,6 +35,8 @@ public class AppiumDriverSetup {
 	
 	private static List<DesiredCapabilities> activeList = Collections.synchronizedList(new ArrayList<DesiredCapabilities>());
 	
+	private AppPackageInventory appPackageInventory = new AppPackageInventory();
+	
 	ActiveAppiumPorts activePorts = new ActiveAppiumPorts();
 	
 	public void makeList () throws IOException {
@@ -56,6 +60,11 @@ public class AppiumDriverSetup {
 			activeList.add(driverCap);
 			newDevice.clear();
 			
+		}
+		
+		//Check if SystemProperty for Dinstall is equal to yes (work)
+		if(System.getProperty("install") != null && System.getProperty("install").equalsIgnoreCase("yes")) {
+			appPackageInventory.createAPKList();
 		}
 		
 		//Implement the IOS Process
@@ -97,11 +106,21 @@ public class AppiumDriverSetup {
 		return cap;
 	}
 	
+	//Install apk with all devices gathered
+	public void installApptoDevices() {
+		String sysValue = System.getProperty("install");
+		if(sysValue.equalsIgnoreCase("yes")) {
+			appPackageInventory.installAppToDevices(getActiveList(), appPackageInventory.getAPKOptions());
+		}
+	}
+	
 	public List<DesiredCapabilities> getActiveList(){
 		return activeList;
 	}
 	
-	
+	public HashMap<String, File> getAPKOptions(){
+		return appPackageInventory.getAPKOptions();
+	}
 	
 
 

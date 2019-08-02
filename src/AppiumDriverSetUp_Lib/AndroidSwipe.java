@@ -191,7 +191,7 @@ public class AndroidSwipe extends Swipe {
 
 	void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement) {
 		int limitCount = 0;
-		while (limitCount < attempts || driver.findElements(method).isEmpty() || driver.findElements(secondMethod).isEmpty()) {
+		while (limitCount < attempts && (driver.findElements(method).isEmpty() || driver.findElements(secondMethod).isEmpty())) {
 			swipeVertical(0.8, 0.25, 3000);
 			limitCount++;
 		}

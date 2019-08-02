@@ -29,6 +29,7 @@ public class DriverTest {
 	
 	public void driverFileSetup() throws IOException, TransformerConfigurationException, InterruptedException {
 		createDrivers.makeList();
+		createDrivers.installApptoDevices();
 		makeFile.setupDriverXMLFile(createDrivers.getActiveList());
 		makeFile.createDriverFile();
 	}

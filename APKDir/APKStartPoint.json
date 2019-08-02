@@ -1,0 +1,4 @@
+{
+	"appPackage": "com.glassdoor.app",
+	"appActivity": "com.glassdoor.gdandroid2.launch.activity.LaunchActivity"
+}
