@@ -1,4 +1,4 @@
-package BaseTest;
+package Test_Setup;
 
 
 import java.io.IOException;
@@ -6,9 +6,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.xml.transform.TransformerConfigurationException;
-
-import AppiumDriverSetUp_Lib.AppiumDriverSetup;
-import AppiumDriverSetUp_Lib.XMLMaker;
 
 public class DriverTest {
 	

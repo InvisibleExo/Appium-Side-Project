@@ -1,10 +1,8 @@
-package AppiumDriverSetUp_Lib;
+package Test_Setup;
 
 import java.io.IOException;
 
-
 public class ActiveAppiumPorts {
-	
 	
 	private int portNum = 5000;
 	private int serverIPChanger = 1;
@@ -21,7 +19,6 @@ public class ActiveAppiumPorts {
 	private String serverIp = "127.0.0." + serverIPChanger;
 	
 	private static boolean serverMade = false;
-	
 	
 	public String getAppiumURL() {
 		String serverURL = "http://" + serverIp + ":" + portNum + "/wd/hub";
@@ -81,18 +78,14 @@ public class ActiveAppiumPorts {
 			try {
 				runtime.exec("cmd.exe /c start cmd.exe /k \"appium -a " + serverIp + " -p " + portNum + 
 						" --relaxed-security --session-override -dc \" {\"\"noReset\"\": \"\"false\"\"}\"\"");
-				Thread.sleep(20000);
 			} catch (IOException e) {
 				e.printStackTrace();
-			} catch (InterruptedException r) {
-				r.printStackTrace();
-			}
+			} 
 			serverMade = true;
 		}
 		else {
 			serverMade = false;
 		}
-		
 	}
 	
 	public void stopServer() {
@@ -104,5 +97,4 @@ public class ActiveAppiumPorts {
 			e.printStackTrace();
 		}
 	}
-
 }

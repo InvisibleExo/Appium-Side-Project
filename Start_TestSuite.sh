@@ -23,7 +23,7 @@ done
 
 cleaning_input () {
 	local runcmd
-	declare runcmd="mvn exec:java -Dexec.mainClass=\"BaseTest.DriverTest\" -Dexec.args=\""${execArgs[@]}"\" "${setupArgs[@]}""
+	declare runcmd="mvn exec:java -Dexec.mainClass=\"Test_Setup.DriverTest\" -Dexec.args=\""${execArgs[@]}"\" "${setupArgs[@]}""
 	printf '%s\n' "${runcmd[*]}"
 	return $rundcmd
 }

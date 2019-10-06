@@ -1,4 +1,4 @@
-package AppiumDriverSetUp_Lib;
+package Test_Setup;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -109,7 +108,7 @@ public class AppiumDriverSetup {
 	//Install apk with all devices gathered
 	public void installApptoDevices() {
 		String sysValue = System.getProperty("install");
-		if(sysValue.equalsIgnoreCase("yes")) {
+		if(sysValue != null && sysValue.equalsIgnoreCase("yes")) {
 			appPackageInventory.installAppToDevices(getActiveList(), appPackageInventory.getAPKOptions());
 		}
 	}

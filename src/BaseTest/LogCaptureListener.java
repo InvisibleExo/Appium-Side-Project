@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.remote.ScreenshotException;
 import org.openqa.selenium.remote.SessionId;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
@@ -146,7 +147,7 @@ public class LogCaptureListener extends TestListenerAdapter {
 	
 	
 	
-	public File testMethodFailScreenshot(AppiumDriver<MobileElement> driver, ITestResult result) throws IOException {
+	public File testMethodFailScreenshot(AppiumDriver<MobileElement> driver, ITestResult result) throws IOException, ScreenshotException{
 		methodName = result.getMethod().getMethodName();
 		calendar = Calendar.getInstance();
 		formatter = new SimpleDateFormat("MM_dd_yyyy_hh_mm_ss");

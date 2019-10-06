@@ -1,4 +1,4 @@
-package AppiumDriverSetUp_Lib;
+package MobileBaseScreen;
 
 import org.openqa.selenium.By;
 

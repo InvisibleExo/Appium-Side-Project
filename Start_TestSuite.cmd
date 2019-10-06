@@ -28,6 +28,6 @@ IF NOT [%3] EQU [] (
 
 
 
-@SET runTests=mvn exec:java -Dexec.mainClass="BaseTest.DriverTest" -Dexec.args="%dExecARGs%" %setupARGS%
+@SET runTests=mvn exec:java -Dexec.mainClass="Test_Setup.DriverTest" -Dexec.args="%dExecARGs%" %setupARGS%
 ECHO ON
 CALL %runTests%

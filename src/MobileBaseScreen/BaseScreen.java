@@ -1,15 +1,17 @@
-package AppiumDriverSetUp_Lib;
+package MobileBaseScreen;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.Base64;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-
-
 
 public class BaseScreen {
 	protected AppiumDriver<MobileElement> driver;
@@ -18,7 +20,6 @@ public class BaseScreen {
 	private DeviceFunction deviceCommands;
 	private NotificationBar notificationBar;
 
-	
 	public BaseScreen(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		determineSwipe(this.driver);
@@ -63,7 +64,6 @@ public class BaseScreen {
 	
 	public void closeNotifications() {
 		swipe.swipeThroughElementVertical(0.90, 0.15, 2000, notificationBar.getNotificationScroller());
-		
 	}
 	
 	public void goBack() {
@@ -79,7 +79,6 @@ public class BaseScreen {
 	}
 	
 	public void resumeApp(String appName) {
-		
 		deviceCommands.resumeApp(appName);
 	}
 
@@ -98,7 +97,6 @@ public class BaseScreen {
 	public void swipeThroughElementHorizontal (double startPercentage, double endPercentage, int duration, MobileElement element) {
 		swipe.swipeThroughElementHorizontal(startPercentage, endPercentage, duration, element);
 	}
-	
 	
 	public enum Direction{
 		nw, sw, ne, se, up, down;
@@ -150,9 +148,10 @@ public class BaseScreen {
 		wait.waitUntilPageLoaded();
 	}
 	
-	
-	
-	
+	public String getSpeicifiedImageB64(String imageNameRequest) throws IOException {
+		File refImgFile = new File("./ImageCheck/"+imageNameRequest);
+		return Base64.getEncoder().encodeToString(Files.readAllBytes(refImgFile.toPath()));
+	}
 	
 	
 }

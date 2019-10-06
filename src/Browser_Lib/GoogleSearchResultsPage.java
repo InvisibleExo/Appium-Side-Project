@@ -2,7 +2,7 @@ package Browser_Lib;
 
 import org.openqa.selenium.support.FindBy;
 
-import AppiumDriverSetUp_Lib.BaseScreen;
+import MobileBaseScreen.BaseScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 

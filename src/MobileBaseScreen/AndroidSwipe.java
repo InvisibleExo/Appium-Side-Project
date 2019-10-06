@@ -1,4 +1,4 @@
-package AppiumDriverSetUp_Lib;
+package MobileBaseScreen;
 
 
 import java.time.Duration;
@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

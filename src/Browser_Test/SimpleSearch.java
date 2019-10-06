@@ -5,10 +5,10 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import AppiumDriverSetUp_Lib.*;
-import AppiumDriverSetUp_Lib.BaseScreen.Direction;
 import BaseTest.*;
 import Browser_Lib.*;
+import MobileBaseScreen.BaseScreen;
+import MobileBaseScreen.BaseScreen.Direction;
 import io.appium.java_client.MobileElement;
 
 public class SimpleSearch extends BaseTest {

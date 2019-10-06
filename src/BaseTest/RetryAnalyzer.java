@@ -6,8 +6,6 @@ import java.io.IOException;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-import AppiumDriverSetUp_Lib.TLDriverFactory;
-
 
 public class RetryAnalyzer extends BaseTest implements IRetryAnalyzer {
 	int count = 0;

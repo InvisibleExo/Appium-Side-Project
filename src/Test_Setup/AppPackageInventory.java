@@ -1,4 +1,4 @@
-package AppiumDriverSetUp_Lib;
+package Test_Setup;
 
 
 import java.io.BufferedReader;

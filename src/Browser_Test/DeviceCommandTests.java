@@ -2,10 +2,10 @@ package Browser_Test;
 
 import org.testng.annotations.Test;
 
-import AppiumDriverSetUp_Lib.BaseScreen;
-import AppiumDriverSetUp_Lib.TLDriverFactory;
 import BaseTest.BaseTest;
+import BaseTest.TLDriverFactory;
 import Browser_Lib.GoogleMainPage;
+import MobileBaseScreen.BaseScreen;
 
 public class DeviceCommandTests extends BaseTest {
 	

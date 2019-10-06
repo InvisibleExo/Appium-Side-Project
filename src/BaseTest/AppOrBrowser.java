@@ -1,4 +1,4 @@
-package AppiumDriverSetUp_Lib;
+package BaseTest;
 
 import java.io.FileReader;
 import java.io.IOException;

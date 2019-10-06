@@ -6,7 +6,7 @@ import java.net.MalformedURLException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
-import AppiumDriverSetUp_Lib.*;
+import MobileBaseScreen.BaseScreen;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -34,7 +34,6 @@ public class BaseTest {
 		TLDriverFactory.setTLDriver(driver);
 		wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 60);
 		defaultContext = TLDriverFactory.getTLDriver().getContext();
-		
 	}
 	
 	@BeforeMethod(alwaysRun=true)

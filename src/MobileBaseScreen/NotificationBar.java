@@ -1,4 +1,4 @@
-package AppiumDriverSetUp_Lib;
+package MobileBaseScreen;
 
 import io.appium.java_client.MobileElement;
 
