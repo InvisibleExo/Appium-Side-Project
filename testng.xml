@@ -2,12 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All-Tests">
-	
+<listeners>
+	<listener class-name="BaseTest.TestMethodListener"></listener>
+	<listener class-name="BaseTest.LogCaptureListener"></listener>
+</listeners>
 	<suite-files>
-		
-		<suite-file path="drivers.xml"></suite-file>
-		
+		<suite-file path="drivers.xml"></suite-file>	
 	</suite-files>
-	
 </suite>
 
