@@ -63,7 +63,7 @@ public class BaseScreen {
 	}
 	
 	public void closeNotifications() {
-		swipe.swipeThroughElementVertical(0.90, 0.15, 2000, notificationBar.getNotificationScroller());
+		swipe.swipeThroughElementVertical(0.90, 0.05, 200, notificationBar.getNotificationScroller());
 	}
 	
 	public void goBack() {
@@ -123,6 +123,28 @@ public class BaseScreen {
 		swipe.swipeDiagonalDirection(startPercentageX, startPercentageY, finalPercentageX, finalPercentageY, duration, direct);
 	}
 	
+	public void swipeDiagonalThroughElement(double startPercentageX, double startPercentageY, double finalPercentageX, 
+			double finalPercentageY, int duration, Direction dir, MobileElement targetElement) {
+		Swipe.Direction direct = null;
+		switch (dir) {
+		case nw:
+			direct = Swipe.Direction.nw;
+			break;
+		case sw:
+			direct = Swipe.Direction.sw;
+			break;
+		case ne:
+			direct = Swipe.Direction.ne;
+			break;
+		case se:
+			direct = Swipe.Direction.se;
+			break;
+		default:
+			break;
+		}
+		swipe.swipeDiagonalDirectionThroughElement(startPercentageX, startPercentageY, finalPercentageX, finalPercentageY, duration, direct, targetElement);
+	}
+	
 	public MobileElement swipeUntilFound(By method, int attempts, MobileElement targetElement, Direction dir) {
 		Swipe.Direction direct= null;
 		switch (dir) {
@@ -137,6 +159,14 @@ public class BaseScreen {
 		}
 		
 		return targetElement = swipe.swipeUntilFound(method, attempts, targetElement, direct);
+	}
+	
+	public void checkIfElementisClickable(By locatorName) {
+		wait.waitUntilElementisClickable(locatorName);
+	}
+	
+	public void checkIfElementisPresent(By locatorName) {
+		wait.waitUntilElementisPrensent(locatorName);
 	}
 	
 	public String getCurrentUrl() {

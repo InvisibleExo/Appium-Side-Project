@@ -126,6 +126,76 @@ public class AndroidSwipe extends Swipe {
 		}
 		
 	}
+	
+	void swipeDiagonalDirectionThroughElement(double startPercentageX, double startPercentageY, double finalPercentageX,
+			double finalPercentageY, int duration, Direction dir, MobileElement target) {
+		elementSize = target.getSize();
+		int startX;
+		int startY;
+		int endX;
+		int endY;
+		
+		switch (dir) {
+			case nw:
+				startX = (int) startPercentageX * elementSize.getHeight();
+				startY = (int) startPercentageY * elementSize.getWidth();
+				endX = (int) finalPercentageX * elementSize.getHeight();
+				endY = (int) finalPercentageY * elementSize.getWidth();
+				
+				new AndroidTouchAction(driver)
+					.press(PointOption.point(endX, endY))
+					.waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))
+					.moveTo(PointOption.point(startX, startY))
+					.release()
+					.perform();
+				break;
+				
+			case sw:
+				startX = (int) startPercentageX * elementSize.getHeight();
+				startY = (int) startPercentageY * elementSize.getWidth();
+				endX = (int) finalPercentageX * elementSize.getHeight();
+				endY = (int) finalPercentageY * elementSize.getWidth();
+				
+				new AndroidTouchAction(driver)
+					.press(PointOption.point(endX, startY))
+					.waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))
+					.moveTo(PointOption.point(startX, endY))
+					.release()
+					.perform();
+				break;
+				
+			case ne:
+				startX = (int) startPercentageX * elementSize.getHeight();
+				startY = (int) startPercentageY * elementSize.getWidth();
+				endX = (int) finalPercentageX * elementSize.getHeight();
+				endY = (int) finalPercentageY * elementSize.getWidth();
+				
+				new AndroidTouchAction(driver)
+					.press(PointOption.point(startX, startY))
+					.waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))
+					.moveTo(PointOption.point(endX, endY))
+					.release()
+					.perform();
+				break;
+				
+			case se:
+				startX = (int) startPercentageX * elementSize.getHeight();
+				startY = (int) startPercentageY * elementSize.getWidth();
+				endX = (int) finalPercentageX * elementSize.getHeight();
+				endY = (int) finalPercentageY * elementSize.getWidth();
+				
+				new AndroidTouchAction(driver)
+					.press(PointOption.point(startX, endY))
+					.waitAction(WaitOptions.waitOptions(Duration.ofMillis(duration)))
+					.moveTo(PointOption.point(endX, startY))
+					.release()
+					.perform();
+				break;
+		default:
+			break;
+		}
+		
+	}
 
 	void swipeThroughElementVertical(double startPercentage, double endPercentage, int duration,
 			MobileElement element) {
@@ -202,5 +272,7 @@ public class AndroidSwipe extends Swipe {
 			targetElement = driver.findElement(secondMethod);
 		}
 	}
+
+	
 
 }

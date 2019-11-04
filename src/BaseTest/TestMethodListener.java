@@ -1,20 +1,18 @@
 package BaseTest;
 
-import org.testng.IInvokedMethod;
-import org.testng.IInvokedMethodListener;
-import org.testng.ITestNGMethod;
-import org.testng.ITestResult;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
-public class TestMethodListener implements IInvokedMethodListener {
+import org.testng.IAnnotationTransformer;
+import org.testng.annotations.ITestAnnotation;
 
-	public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
-		ITestNGMethod m = method.getTestMethod();
-		if(null == m.getRetryAnalyzer()) {
-			m.setRetryAnalyzer(new RetryAnalyzer());
-		}
-	}
 
-	public void beforeInvocation(IInvokedMethod arg0, ITestResult arg1) {
+public class TestMethodListener implements IAnnotationTransformer {
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public void transform(ITestAnnotation annotation, Class classTest, Constructor testConstructor, Method testMethod) {
+		annotation.setRetryAnalyzer(RetryAnalyzer.class);
 		
 	}
 

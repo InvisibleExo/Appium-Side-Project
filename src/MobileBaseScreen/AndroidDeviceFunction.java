@@ -34,7 +34,9 @@ public class AndroidDeviceFunction extends DeviceFunction {
 
 	void goBack() {
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
-		wait.waitUntilPageLoaded();
+		if(driver.getCapabilities().getCapability("browserName") != null) {
+			wait.waitUntilPageLoaded();
+		}
 	}
 
 	
@@ -52,7 +54,9 @@ public class AndroidDeviceFunction extends DeviceFunction {
 		MobileElement app = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(MobileBy.AccessibilityId(appName)));
 		app.click();
 		driver.context(defaultContext);
-		wait.waitUntilPageLoaded();
+		if(driver.getCapabilities().getCapability("browserName") != null) {
+			wait.waitUntilPageLoaded();
+		}
 		
 	}
 

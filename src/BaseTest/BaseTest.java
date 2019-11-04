@@ -11,7 +11,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-@Listeners({LogCaptureListener.class, TestMethodListener.class})
+
 public class BaseTest {
 	
 	protected AppiumDriver<MobileElement> driver;
@@ -31,29 +31,30 @@ public class BaseTest {
 		System.out.println("Setting up Driver:");
 		driver = driverSetup.driverPreTestSetUp(platform, udid, deviceName, URL, port);
 		System.out.println("Testing driver: " + driver.getCapabilities().getCapability(MobileCapabilityType.DEVICE_NAME));
-		TLDriverFactory.setTLDriver(driver);
-		wait = new WebDriverWait(TLDriverFactory.getTLDriver(), 60);
-		defaultContext = TLDriverFactory.getTLDriver().getContext();
+		TLDriver.setTLDriver(driver);
+		wait = new WebDriverWait(TLDriver.getTLDriver(), 60);
+		defaultContext = TLDriver.getTLDriver().getContext();
 	}
 	
 	@BeforeMethod(alwaysRun=true)
 	public void prepSetUp() {
+		System.out.println("Context currently: " + TLDriver.getTLDriver().getContext());
 		System.out.println("Set to Default before test:");
-		TLDriverFactory.getTLDriver().context("NATIVE_APP");
-		System.out.println("Current SessionID for: " + TLDriverFactory.getTLDriver().getCapabilities().getCapability("udid") +  ": " +TLDriverFactory.getTLDriver().getSessionId().toString());
-		TLDriverFactory.getTLDriver().manage().logs().getAvailableLogTypes();
-		TLDriverFactory.getTLDriver().manage().logs().get("server");
-		if((TLDriverFactory.getTLDriver().getPlatformName()+"").toLowerCase().contains("android")){
-			TLDriverFactory.getTLDriver().manage().logs().get("logcat");
+		TLDriver.getTLDriver().context("NATIVE_APP");
+		System.out.println("Current SessionID for: " + TLDriver.getTLDriver().getCapabilities().getCapability("udid") +  ": " +TLDriver.getTLDriver().getSessionId().toString());
+		TLDriver.getTLDriver().manage().logs().getAvailableLogTypes();
+		TLDriver.getTLDriver().manage().logs().get("server");
+		if((TLDriver.getTLDriver().getPlatformName()+"").toLowerCase().contains("Android")){
+			TLDriver.getTLDriver().manage().logs().get("logcat");
 		}
 		
-		TLDriverFactory.getTLDriver().context(defaultContext);
+		TLDriver.getTLDriver().context(defaultContext);
 	}
 	
 	
 	@AfterTest(alwaysRun=true)
 	public void closingTime() {
-		TLDriverFactory.getTLDriver().quit();
+		TLDriver.getTLDriver().quit();
 	}
 	
 	

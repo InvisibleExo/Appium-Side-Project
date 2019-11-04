@@ -3,9 +3,11 @@ package App_Lib;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import MobileBaseScreen.BaseScreen;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
@@ -79,6 +81,7 @@ public class RedditLogInPrompt extends BaseScreen {
 	
 	public void logIn() {
 		logIn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(MobileBy.id("com.reddit.frontpage:id/nav_icon")));
 	}
 	
 	public void goBackPreviousPage() {

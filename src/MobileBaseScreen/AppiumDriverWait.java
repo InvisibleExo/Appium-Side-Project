@@ -2,9 +2,10 @@ package MobileBaseScreen;
 
 import java.util.function.Function;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.AppiumDriver;
@@ -25,10 +26,8 @@ public class AppiumDriverWait extends WebDriverWait {
 		
 	}
 	
-	//Add methods to check if widget/webpage is fully loaded.
 	public void waitUntilPageLoaded() {
-		Wait<WebDriver> wait = new WebDriverWait(driver, 30);
-		wait.until(new Function<WebDriver, Boolean>() {
+		until(new Function<WebDriver, Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"));
 				return String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"))
@@ -38,6 +37,14 @@ public class AppiumDriverWait extends WebDriverWait {
 	
 	}
 		
+	//check if widget is clickable
+	public void waitUntilElementisClickable(By locatorName) {
+		until(ExpectedConditions.elementToBeClickable(locatorName));
+	}
+	//check if widget is present
+	public void waitUntilElementisPrensent(By locatorName) {
+		until(ExpectedConditions.presenceOfElementLocated(locatorName));
+	}
 	
 	
 	public boolean checkPageLoaded() {
@@ -48,11 +55,9 @@ public class AppiumDriverWait extends WebDriverWait {
 	}
 	
 	
-	//Add method to check if element goes stale and reinitialze 
+	//Add method to check if element goes stale and reinitialze? 
 	
 	
-	
-	//Should I replace this class with FluentAppiumWait? Should I mimic AppiumDriverWait to extend from FluentAppiumWait?
 	
 	
 	

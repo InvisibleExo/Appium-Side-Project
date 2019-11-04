@@ -61,13 +61,13 @@ public class LogCaptureListener extends TestListenerAdapter {
 	
 	public void captureTestFailureLogs(AppiumDriver<MobileElement> driver, ITestResult result) throws IOException {
 		testMethodFail = testMethodFolderLogs(driver, result);
-		stackCapture = testMethodFailureStackTrace(driver, result);
 		driver.context("NATIVE_APP");
 		sessionID = driver.getSessionId();
 		serverCapture = testMethodFailureServerLogs(driver, result);
 		logCatCapture = testMethodFailureLogCatLogs(driver, result);
 		driver.context(BaseTest.defaultContext);
 		bugPic = testMethodFailScreenshot(driver, result);
+		stackCapture = testMethodFailureStackTrace(driver, result);
 		if(System.getProperty("getlayout") != null && System.getProperty("getlayout").equalsIgnoreCase("yes")) {
 			pageSourceLayout = testMethodSourceLayout(driver, result);
 		}

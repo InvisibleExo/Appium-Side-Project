@@ -59,4 +59,11 @@ public class IosSwipe extends Swipe {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	void swipeDiagonalDirectionThroughElement(double startPercentageX, double startPercentageY, double finalPercentageX,
+			double finalPercentageY, int duration, Direction dir, MobileElement target) {
+		// TODO Auto-generated method stub
+		
+	}
 }

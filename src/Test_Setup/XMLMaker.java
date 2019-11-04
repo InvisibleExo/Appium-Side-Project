@@ -95,15 +95,26 @@ public class XMLMaker {
 				
 				testElement.appendChild(devicePort);
 				
-				Element packages = doc.createElement("packages");
-				testElement.appendChild(packages);
-				String testPackageName = System.getProperty("package");
-				Element browserOrAppTestPackage = doc.createElement("package");
-				browserOrAppTestPackage.setAttribute("name", testPackageName);
-				packages.appendChild(browserOrAppTestPackage);
 				
-				
-				
+				if(System.getProperty("testclass") != null) {
+					Element classes = doc.createElement("classes");
+					testElement.appendChild(classes);
+					String[] classNames = System.getProperty("testclass").split(";");
+					for(String className: classNames) {
+						Element classTag = doc.createElement("class");
+						classTag.setAttribute("name", className);
+						classes.appendChild(classTag);
+					}
+				}
+				else {
+					Element packages = doc.createElement("packages");
+					testElement.appendChild(packages);
+					String testPackageName = System.getProperty("package");
+					Element browserOrAppTestPackage = doc.createElement("package");
+					browserOrAppTestPackage.setAttribute("name", testPackageName);
+					packages.appendChild(browserOrAppTestPackage);
+				}
+						
 				connectedDevices++;
 			}	
 			suiteElement.setAttribute("parallel", "tests");
@@ -126,8 +137,7 @@ public class XMLMaker {
 		FileOutputStream streamNewFile = new FileOutputStream("./drivers.xml");
 		PrintWriter pw = new PrintWriter(streamNewFile);
 		StreamResult result = new StreamResult(pw);
-		
-		
+				
 		try {
 			
 			transformer.transform(source, result);
@@ -135,8 +145,6 @@ public class XMLMaker {
 			
 			System.out.println("File Updated");
 	
-			
-		
 		} catch (TransformerException e) {
 			e.printStackTrace();
 			System.out.println("Error updating the file");

@@ -20,6 +20,9 @@ abstract class Swipe {
 	abstract void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX, 
 			double finalPercentageY, int duration, Direction dir);
 	
+	abstract void swipeDiagonalDirectionThroughElement(double startPercentageX, double startPercentageY, double finalPercentageX, 
+			double finalPercentageY, int duration, Direction dir, MobileElement target);
+	
 	abstract MobileElement swipeUntilFound(By method, int attempts, MobileElement targetElement, Direction dir);
 	
 	abstract void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement);
