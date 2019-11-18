@@ -9,6 +9,12 @@ public class IosSwipe extends Swipe {
 	private AppiumDriver<MobileElement> driver;
 	private static String defaultContext;
 	
+	/**
+	 * Ios Swipe currently not supported for MobileBaseScreen package
+	 * 
+	 * @param driver
+	 */
+	
 	IosSwipe(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		defaultContext = this.driver.getContext();
@@ -41,14 +47,14 @@ public class IosSwipe extends Swipe {
 	}
 
 	@Override
-	void swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement) {
+	MobileElement swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement, Direction dir) {
 		// TODO Auto-generated method stub
-		
+		return targetElement;
 	}
 
 	@Override
-	void swipeDiagonalDirection(double startPercentageX, double startPercentageY, double finalPercentageX,
-			double finalPercentageY, int duration, Direction dir) {
+	void swipeCustomDirection(double startPercentageX, double startPercentageY, double finalPercentageX,
+			double finalPercentageY, int duration) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -61,8 +67,8 @@ public class IosSwipe extends Swipe {
 	}
 
 	@Override
-	void swipeDiagonalDirectionThroughElement(double startPercentageX, double startPercentageY, double finalPercentageX,
-			double finalPercentageY, int duration, Direction dir, MobileElement target) {
+	void swipeCustomDirectionThroughElement(double startPercentageX, double startPercentageY, double finalPercentageX,
+			double finalPercentageY, int duration, MobileElement target) {
 		// TODO Auto-generated method stub
 		
 	}
