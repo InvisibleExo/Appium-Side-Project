@@ -1,6 +1,21 @@
 # Appium-Side-Project
 A mobile UI automation framework with a dynamic testng.xml setup
 
+
+--Requirements:
+
+
+-Java 8(Java 9 or higher will not work with Android Stuido sdk) 
+
+
+-Android Studio SDK
+
+
+-Appium (at least beta version 14) 
+
+
+-Maven(Dependencies required(By groupID): org.seleniumhq.selenium(artifactIds selenium-remote-driver, selenium-java), org.testng, io.appium, com.googlecode.json-simple) 
+
 The focus of this project is to create a UI Test Mobile Automation Framework for either physical devices or emulator to run from a PC without the hassle to manually enter device udid or specify whether application is browser or mobile app during setup. 
 
 This Base library, (Test_Setup, MobileBaseScreen, and BaseTest), is designed to create Appium Drivers for Android, based on any number of devices connected or active emulators, and simplify the setup. 
@@ -29,7 +44,7 @@ Argument parameter:-Dinstall="yes"
  
  -TestClass: To avoid running all the tests classes from your test package, you can now specify which class you want to focus. In order to specify more than one class, you much use semi-colon(;) between test classes.
  
- Argument parameter: -Dtestclass="<Package Name>.<Class Name>;<Package Name>.<A Different Class Name>"
+ Argument parameter: -Dtestclass="(Package Name.Class Name);(Package Name.A Different Class Name)"
 
 
 
