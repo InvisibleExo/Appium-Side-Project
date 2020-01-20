@@ -23,7 +23,6 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 * @Note BaseScreen currently supports Android initialization.
 * 
 * @author InvisibleExo
-* @Progress since Oct 2018
 
 */
 public class BaseScreen {
@@ -245,6 +244,35 @@ public class BaseScreen {
 		}
 		return targetElement = swipe.swipeUntilFound(method, attempts, targetElement, direct);
 	}
+	
+	/**
+	 *  This method will continue to swipe either up or down(based on Direction enum provided,) until the desired MobileElement is found or the number of attempts provided for the method has hit its max.
+	 * This method provides the option with a second By method to help search for desired Mobile Element.
+	 * 
+	 * @param method
+	 * @param secondMethod
+	 * @param attempts
+	 * @param targetElement
+	 * @param dir
+	 * @return MobileElement
+	 */
+	
+	public MobileElement swipeUntilFound(By method, By secondMethod, int attempts, MobileElement targetElement, Direction dir) {
+		Swipe.Direction direct= null;
+		switch (dir) {
+		case up:
+			direct = Swipe.Direction.up;
+			break;
+		case down: 
+			direct = Swipe.Direction.down;
+			break;
+		default:
+			break;
+		}
+		return targetElement = swipe.swipeUntilFound(method, secondMethod, attempts, targetElement, direct);
+	}
+	
+	
 /**
  * Will continue checking for MobileElement by locator method until element 
  * is now click-able.

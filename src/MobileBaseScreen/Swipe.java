@@ -14,6 +14,7 @@ import io.appium.java_client.MobileElement;
 
 abstract class Swipe {
 	
+	
 	abstract void swipeVertical(double startPercentage, double endPercentage, int duration);
 	
 	abstract void swipeThroughElementVertical(double startPercentage, double endPercentage, int duration, MobileElement element);

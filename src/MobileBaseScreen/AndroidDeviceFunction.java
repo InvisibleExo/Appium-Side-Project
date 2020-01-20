@@ -14,11 +14,25 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
+/**
+ * AndroidDeviceFunction is a sub class for DeviceFunction class. With functions, go home, go back, view active apps, and resume apps, contains implict and explict waits 
+ * to avoid errors with mobile apps and browsers.
+ * 
+ * @author InvisibleExo
+ */
+
 public class AndroidDeviceFunction extends DeviceFunction {
 
 	private AndroidDriver<MobileElement> driver;
 	private static String defaultContext;
 	private AppiumDriverWait wait;
+	
+	/**
+	 * AndroidDeviceFunction is a sub class for DeviceFunction class. With functions, go home, go back, view active apps, and resume apps, contains implict and explict waits 
+	 * to avoid errors with mobile apps and browsers.
+	 * 
+	 * @param driver
+	 */
 	
 	AndroidDeviceFunction(AppiumDriver<MobileElement> driver){
 		this.driver = (AndroidDriver<MobileElement>) driver;

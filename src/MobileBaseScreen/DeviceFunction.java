@@ -1,5 +1,14 @@
 package MobileBaseScreen;
 
+
+/**
+ * DeviceFunction is an abstract class with methods to support device main functions such as go home button, go back, view active apps, and resume active app.
+ * (Note: Android is currently the only supported sub class.) 
+ * 
+ * 
+ * @author InvisibleExo
+ */
+
 abstract class DeviceFunction {
 
 	abstract void goHome();
