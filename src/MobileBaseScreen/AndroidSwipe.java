@@ -13,7 +13,13 @@ import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
-
+/**
+ * AndroidSwipe is a subclass of Swipe. This class provides the functions for all swipe commands supported by Android.
+ * 
+ * 
+ * @author InvisibleExo
+ *
+ */
 
 public class AndroidSwipe extends Swipe {
 	
@@ -22,6 +28,15 @@ public class AndroidSwipe extends Swipe {
 	private Dimension elementSize;
 	private static String nativeContext = "NATIVE_APP";
 	private static String defaultContext;
+	
+	/**
+	 * AndroidSwipe is a subclass of Swipe. This class provides the functions for all swipe commands supported by Android. 
+	 * Swipes can be perform device swipes or swipes through selected elements.
+	 * 
+	 * @Note Swipe methods can be performed in non-native context. (Earlier versions of Appium may require swipes to be performed in Native context)
+	 * 
+	 * @param driver
+	 */
 	
 	
 	AndroidSwipe(AppiumDriver<MobileElement> driver){

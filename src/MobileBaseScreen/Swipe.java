@@ -6,13 +6,14 @@ import io.appium.java_client.MobileElement;
 
 /**
  * Swipe is an abstract class for MobileBaseScreen package and must be initialized 
- * as AndroidSwipe or IosSwipe. (Note: IosSwipe class isn't currently supported for MobileBaseScreen package) 
+ * as AndroidSwipe or IosSwipe. (Note: IosSwipe class isn't currently support for MobileBaseScreen package) 
  * 
  * @author InvisibleExo
  *
  */
 
 abstract class Swipe {
+	
 	
 	abstract void swipeVertical(double startPercentage, double endPercentage, int duration);
 	
