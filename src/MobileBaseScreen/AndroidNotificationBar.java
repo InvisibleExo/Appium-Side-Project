@@ -18,13 +18,9 @@ public class AndroidNotificationBar extends NotificationBar{
 	
 	private AppiumDriverWait wait;
 	
-	protected MobileElement notificationSection;
-	
-	private MobileElement notificationCommandsHeader;
-	private List<MobileElement> notificationCommandList;
+	private MobileElement notificationSection;
 	
 	private MobileElement notificationEventListHeader;
-	private List<MobileElement> notificationEventList;
 	
 	AndroidNotificationBar(AppiumDriver<MobileElement> driver){
 		this.driver = (AndroidDriver<MobileElement>)driver;
@@ -35,26 +31,19 @@ public class AndroidNotificationBar extends NotificationBar{
 	void openNotifications() {
 		driver.openNotifications();
 		driver.context(nativeContext);
-		notificationSection = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.android.systemui:id/quick_settings_container")));
+		
+		notificationSection = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.android.systemui:id/notification_container_parent")));
 		notificationEventListHeader = (MobileElement) wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.android.systemui:id/notification_stack_scroller")));
 	}
-	void listNotificationSystemCommands() {
-		notificationCommandList = notificationCommandsHeader.findElements(By.className("android.widget.FrameLayout"));
-		
-	}
 	
-	public MobileElement getNotificationSection() {
-		return notificationSection;
-	}
-	
-	public MobileElement getNotificationScroller() {
+	protected MobileElement getNotificationScroller() {
 		return notificationEventListHeader;
 	}
 	
-	void selectSystemCommand(String systemName) {
-		// TODO Auto-generated method stub
-		
+	protected MobileElement getNotificationSection() {
+		return notificationSection;
 	}
+	
 
 	void clearNotifications() {
 		try {
@@ -65,14 +54,45 @@ public class AndroidNotificationBar extends NotificationBar{
 		}
 	}
 
-	void listNotificationEvents() {
-		notificationEventList = notificationEventListHeader.findElementsByAccessibilityId("com.android.systemui:id/expanded");
+	void seeEventList() {
+		List<MobileElement> notificationEventList = notificationEventListHeader.findElements(By.id("com.android.systemui:id/expanded"));
+		By listofTextNames = By.xpath("//android.widget.TextView[@resource-id='android:id/app_name_text' or @resource-id='android:id/title' or @resource-id='android:id/big_text' or @resource-id='android:id/header_text' or @resource-id='android:id/time' or @resource-id='com.android.systemui:id/notification_title' or @resource-id='com.android.systemui:id/notification_text']");
+		int count = 1;
+		for(MobileElement event:notificationEventList) {
+			List<MobileElement> eventTextContent = event.findElements(listofTextNames);
+			System.out.println("Event "+ count +":");
+			for(MobileElement eventText : eventTextContent) {
+				System.out.println(eventText.getText());
+			}
+			count++;
+		}
 		
 	}
 
 	void openNotificationEvent(String eventName) {
-		// TODO Auto-generated method stub
-		
+		List<MobileElement> notificationEventList = notificationEventListHeader.findElements(By.id("com.android.systemui:id/expanded"));
+		By listofTextNames = By.xpath("//android.widget.TextView[@resource-id='android:id/app_name_text' or @resource-id='android:id/title' or @resource-id='android:id/big_text' or @resource-id='android:id/header_text' or @resource-id='android:id/time' or @resource-id='com.android.systemui:id/notification_title' or @resource-id='com.android.systemui:id/notification_text']");
+		boolean found = false;
+		OUTER:
+		for(MobileElement event:notificationEventList) {
+			List<MobileElement> eventTextContent = event.findElements(listofTextNames);
+			for(MobileElement eventText : eventTextContent) {
+				if(eventText.getText().contains(eventName)) {
+					found = true;
+					eventText.click();
+					break OUTER;
+				}
+			}
+		}
+		if(!found) {
+			System.out.println("The requested input: "+ eventName + " could not be found in the list of Notification");
+		}
+	}
+
+	void revertToDefaultContext() {
+		if(!driver.getContext().equals(defaultContext)) {
+			driver.context(defaultContext);
+		}
 	}
 
 

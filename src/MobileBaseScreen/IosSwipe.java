@@ -18,6 +18,8 @@ public class IosSwipe extends Swipe {
 	IosSwipe(AppiumDriver<MobileElement> driver){
 		this.driver = driver;
 		defaultContext = this.driver.getContext();
+		//Apply defaultContext (use of context may change for this class)
+		this.driver.context(defaultContext);
 	}
 
 	@Override
