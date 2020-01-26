@@ -105,6 +105,15 @@ public class BaseScreen {
  */
 	public void closeNotifications() {
 		swipe.swipeThroughElementVertical(0.90, 0.05, 200, notificationBar.getNotificationScroller());
+		notificationBar.revertToDefaultContext();
+	}
+	
+	public void readNotificationEvents() {
+		notificationBar.seeEventList();
+	}
+	
+	public void openNotificationEvent(String target) {
+		notificationBar.openNotificationEvent(target);
 	}
 /**
  * Sends a command to the DeviceFunction instance to perform the device's go back command.	

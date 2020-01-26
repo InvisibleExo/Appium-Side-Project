@@ -13,17 +13,9 @@ import io.appium.java_client.MobileElement;
 
 
 public class AppiumDriverWait extends WebDriverWait {
-	 
-	AppiumDriver<MobileElement> driver;
 	
-	JavascriptExecutor js;
-
 	public AppiumDriverWait(AppiumDriver<MobileElement>driver, long timeOutInSeconds) {
 		super(driver, timeOutInSeconds);
-		this.driver = driver;
-		js = (JavascriptExecutor)driver;
-		
-		
 	}
 	
 	public void waitUntilPageLoaded() {
@@ -34,7 +26,6 @@ public class AppiumDriverWait extends WebDriverWait {
 						.equals("complete");
 			}
 		});
-	
 	}
 		
 	//check if widget is clickable
@@ -46,21 +37,10 @@ public class AppiumDriverWait extends WebDriverWait {
 		until(ExpectedConditions.presenceOfElementLocated(locatorName));
 	}
 	
-	
 	public boolean checkPageLoaded() {
 		boolean completeLoad = false;
 		
 		return completeLoad;
-		
 	}
-	
-	
-	//Add method to check if element goes stale and reinitialze? 
-	
-	
-	
-	
-	
-	
 
 }

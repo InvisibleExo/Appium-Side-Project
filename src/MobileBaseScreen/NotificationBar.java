@@ -6,17 +6,15 @@ abstract class NotificationBar {
 	
 	abstract void openNotifications();
 	
-	abstract void listNotificationSystemCommands();
-	
-	abstract void selectSystemCommand(String systemName);
-	
 	abstract void clearNotifications();
 	
-	abstract void listNotificationEvents();
+	abstract void seeEventList();
 	
 	abstract void openNotificationEvent(String eventName);
 
+	abstract MobileElement getNotificationScroller();
+	
 	abstract MobileElement getNotificationSection();
 	
-	abstract MobileElement getNotificationScroller();
+	abstract void revertToDefaultContext();
 }
