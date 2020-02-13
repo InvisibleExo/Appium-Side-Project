@@ -4,16 +4,17 @@ A mobile UI automation test framework with a dynamic testng.xml setup.
 ---
 
 --Requirements:
--Java 8(Java 9 or higher will not work with Android Stuido sdk) 
 
--Android Studio SDK
+-`Java 8` (Java 9 or higher will not work with Android Stuido sdk) 
 
--Appium (at least beta version 14) 
+-`Android Studio SDK`
+
+-`Appium` (at least beta version 14) 
+
+-`Maven`(Dependencies required(By groupID): `org.seleniumhq.selenium`(artifactIds: `selenium-remote-driver` and `selenium-java`), `org.testng, io.appium`, and `com.googlecode.json-simple` 
 
 ---
 
--Maven(Dependencies required(By groupID): `org.seleniumhq.selenium`(artifactIds: `selenium-remote-driver` and `selenium-java`), `org.testng, io.appium`, and `com.googlecode.json-simple` 
----
 The focus of this project is to create a UI Mobile Automation Test Framework for either physical devices or emulator to run from any PC without the hassle of manually enter device udid or specify whether application is browser or mobile app during setup. 
 
 This Base library, (Test_Setup, MobileBaseScreen, and BaseTest), is designed to create Appium Drivers for Android, based on any number of devices connected or active emulators.
@@ -23,7 +24,7 @@ The MobileBaseScreen package's `BaseScreen` class provides a list of functions w
 
 The code currently supports Android devices for both app and Chrome Browser.
 
-In order to run tests with your app, you must place your app's apk file  in `APKFiles` directory. (location: `./APKDir/APKFiles`) You must also specify your appPackage and appActivity info in json file called `APKStartPoint`. (location: `./APKDir`)
+In order to run tests with your app, you must place your app's apk file  in `APKFiles` directory. Location: `./APKDir/APKFiles` You must also specify your appPackage and appActivity info in json file called `APKStartPoint`. Location: `./APKDir`
 
 This project now supports simple batch and bash scripts to simplify the input entered and execution. 
 For Example: `Start_TestSuite<.cmd or .sh> app(or browser name) App_Test(Test script_package) + anymore additional parameters`
@@ -35,15 +36,15 @@ Additional Inputs available:
 
 -Install: You now have the option have all the devices the option to install APK files during setup. 
 
-Argument parameter:`-Dinstall=yes`
+Arg:`-Dinstall=yes`
 
 -Getlayout: For any errors encountered during testing you have the option to retrieve the source layout on the web page/widget from where the error occurred.
 
- Argument parameter:`-Dgetlayout=yes`
+ Arg:`-Dgetlayout=yes`
  
- -TestClass: To avoid running all the tests classes from your test package, you can now specify which class you want to focus. In order to specify more than one class, you much use semi-colon(;) between test classes.
+-TestClass: To avoid running all the tests classes from your test package, you can now specify which class you want to focus. In order to specify more than one class, you much use semi-colon(;) between test classes.
  
- Argument parameter: `-Dtestclass=(Package Name.Class Name);(Package Name.A Different Class Name)`
+ Arg: `-Dtestclass=(Package Name.Class Name);(Package Name.A Different Class Name)`
 
 ---
 Let the fun begin. 
