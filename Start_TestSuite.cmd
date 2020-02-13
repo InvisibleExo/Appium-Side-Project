@@ -6,28 +6,29 @@
 
 ECHO %plat% and %package%
 
-
-::Passing parameters for -Dexec.args and setupArgs
-@SET dExecARGs=-Dplat=%plat% -Dpackage=%package%
+::Passing parameters for setupArgs
 
 @SET setupARGS=-Dplat="%plat%" -Dpackage="%package%"
 
 ECHO OFF
-
 
 :while
 IF NOT [%3] EQU [] (
 @Setlocal EnableDelayedExpansion
 @SET val=%3
 @SET result=!val:"=!
-@SET dExecARGs=%dExecARGs% !result!
-@SET setupARGS=%setupARGS% %~3
+@SET result=!result:\=!
+@SET setupARGS=%setupARGS% !result!
 @SHIFT
 @goto :while
 )
 
+ECHO %setupARGS%
 
-
-@SET runTests=mvn exec:java -Dexec.mainClass="Test_Setup.DriverTest" -Dexec.args="%dExecARGs%" %setupARGS%
+@SET runSetup=mvn exec:java -Dexec.mainClass="Test_Setup.DriverTest" %setupARGS%
 ECHO ON
-CALL %runTests%
+CALL %runSetup%
+ECHO "Running Tests..."
+@SET runTest=mvn test %setupARGS%
+ECHO %runTest%
+CALL %runTest%
