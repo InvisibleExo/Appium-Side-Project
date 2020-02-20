@@ -19,7 +19,8 @@ The focus of this project is to create a UI Mobile Automation Test Framework for
 
 This Base library, (Test_Setup, MobileBaseScreen, and BaseTest), is designed to create Appium Drivers for Android, based on any number of devices connected or active emulators.
 
-An example is also provided to show how this framework would test for either app or browser. This framework can also be specified which Test packages you wish to run. Test packages must extend from BaseTest in BaseTest package. Test Libraries must extensions from BaseScreen in MobileBaseScreen package. 
+An example is also provided in the master branch to show how this framework would test for either app or browser. This framework can run any test package you wish to pass in. Your selected test package must be set as an extention of BaseTest class(BaseTest package). For your test library package, it must be set as an extensions of BaseScreen class(MobileBaseScreen package). 
+
 The MobileBaseScreen package's `BaseScreen` class provides a list of functions which operate basic functions, such as swipes, go back/home or control panel from device, and opening/selecting notifications.
 
 The code currently supports Android devices for both app and Chrome Browser.
