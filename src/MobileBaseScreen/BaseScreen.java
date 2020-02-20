@@ -127,6 +127,31 @@ public class BaseScreen {
 	public void goHome() {
 		deviceCommands.goHome();
 	}
+	
+	public boolean turnOnWifi() {
+		return deviceCommands.turnWiFiOn();
+	}
+	
+	public boolean turnOffWifi() {
+		return deviceCommands.turnWiFiOff();
+	}
+	
+	public boolean turnOnMobileData() {
+		return deviceCommands.turnMobileDataOn();
+	}
+	
+	public boolean turnOffMobileData() {
+		return deviceCommands.turnMobileDataOff();
+	}
+	
+	public boolean turnOnAirPlaneMode() {
+		return deviceCommands.turnAirPlaneModeOn();
+	}
+	
+	public boolean turnOffAirPlaneMode() {
+		return deviceCommands.turnAirPlaneModeOff();
+	}
+	
 /**
  * Sends a command to view the DeviceFunction instance to view any active apps from the device's home screen.	
  */
