@@ -18,6 +18,19 @@ abstract class DeviceFunction {
 	abstract void viewActiveAppList();
 	
 	abstract void resumeApp(String appName);
+	
+	abstract boolean turnWiFiOn();
+	
+	abstract boolean turnWiFiOff();
+	
+	abstract boolean turnMobileDataOn();
+	
+	abstract boolean turnMobileDataOff();
+	
+	abstract boolean turnAirPlaneModeOn();
+	
+	abstract boolean turnAirPlaneModeOff();
+	
 }
 
 

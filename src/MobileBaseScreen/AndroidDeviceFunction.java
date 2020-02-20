@@ -74,4 +74,36 @@ public class AndroidDeviceFunction extends DeviceFunction {
 		
 	}
 
+
+	boolean turnWiFiOn() {
+		return AndroidToggleSettings.turnWiFiOn(driver);
+	}
+
+
+	boolean turnWiFiOff() {
+		return AndroidToggleSettings.turnWifiOff(driver);
+	}
+
+
+	boolean turnMobileDataOn() {
+		return AndroidToggleSettings.turnMobileDataOn(driver);
+	}
+
+
+	boolean turnMobileDataOff() {
+		return AndroidToggleSettings.turnMobileDataOff(driver);
+	}
+
+
+	boolean turnAirPlaneModeOn() {
+		return AndroidToggleSettings.turnAirPlaneModeOn(driver);
+	}
+
+
+	boolean turnAirPlaneModeOff() {
+		return AndroidToggleSettings.turnAirPlaneModeOff(driver);
+	}
+	
+	
+
 }
