@@ -25,7 +25,7 @@ IF NOT [%3] EQU [] (
 
 ECHO %setupARGS%
 
-@SET runSetup=mvn exec:java -Dexec.mainClass="Test_Setup.DriverTest" %setupARGS%
+@SET runSetup=mvn exec:java -Dexec.mainClass="Test_Setup.DriverTest" %setupARGS% -Dexec.cleanupDaemonThreads="false"
 ECHO ON
 CALL %runSetup%
 ECHO "Running Tests..."

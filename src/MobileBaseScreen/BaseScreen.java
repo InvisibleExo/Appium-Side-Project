@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Base64;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
@@ -110,6 +111,14 @@ public class BaseScreen {
 	
 	public void readNotificationEvents() {
 		notificationBar.seeEventList();
+	}
+	
+	public Map<String, Object> listNotifications(){
+		return notificationBar.getNotificationList();
+	}
+	
+	public boolean findNotificationEvent(Map<String, Object> notificationList, String notificationTarget) {
+		return notificationBar.findNotificationEvent(notificationList, notificationTarget);
 	}
 	
 	public void openNotificationEvent(String target) {
