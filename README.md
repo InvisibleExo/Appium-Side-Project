@@ -5,7 +5,7 @@ A mobile UI automation test framework with a dynamic testng.xml setup.
 
 --Requirements:
 
--`Java 8` (Java 9 or higher will not work with Android Stuido sdk) 
+-`Java 8 or Higher`
 
 -`Android Studio SDK`
 
