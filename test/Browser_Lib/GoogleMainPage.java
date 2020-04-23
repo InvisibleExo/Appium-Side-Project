@@ -27,7 +27,7 @@ public class GoogleMainPage extends BaseScreen {
 		searchText.click();
 		searchText.sendKeys(query);
 		confirmSearch.click();
-		wait.waitUntilPageLoaded();
+		waitUntilPageLoaded();
 	}
 
 }
