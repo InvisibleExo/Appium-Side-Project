@@ -19,7 +19,7 @@ public class AppiumDriverWait extends WebDriverWait {
 		super(driver, timeOutInSeconds);
 	}
 	
-	public void waitUntilPageLoaded() {
+	protected void waitUntilPageLoaded() {
 		until(new Function<WebDriver, Boolean>() {
 			public Boolean apply(WebDriver driver) {
 				String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState"));
@@ -30,15 +30,19 @@ public class AppiumDriverWait extends WebDriverWait {
 	}
 		
 	//check if widget is clickable
-	public void waitUntilElementisClickable(By locatorName) {
+	protected void waitUntilElementisClickable(By locatorName) {
 		until(ExpectedConditions.elementToBeClickable(locatorName));
 	}
 	//check if widget is present
-	public void waitUntilElementisPrensent(By locatorName) {
+	protected void waitUntilElementisPrensent(By locatorName) {
 		until(ExpectedConditions.presenceOfElementLocated(locatorName));
 	}
 	
-	public boolean checkPageLoaded() {
+	protected MobileElement waitAndFindFor(By locator) {
+		return (MobileElement) until(ExpectedConditions.presenceOfElementLocated(locator));
+	}
+	
+	protected boolean checkPageLoaded() {
 		boolean completeLoad = false;
 		
 		return completeLoad;
