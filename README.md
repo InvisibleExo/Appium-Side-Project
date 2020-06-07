@@ -47,6 +47,10 @@ Arg:`-Dinstall=yes`
  
  Arg: `-Dtestclass=(Package Name.Class Name);(Package Name.A Different Class Name)`
 
+-Split: Splits up test classes within your test package evenly across all connected devices. 
+
+Arg: `-Dsplit=yes`
+
 ---
 Let the fun begin. 
 
