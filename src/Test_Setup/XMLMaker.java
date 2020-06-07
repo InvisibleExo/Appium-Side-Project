@@ -1,9 +1,11 @@
 package Test_Setup;
 
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -23,13 +25,13 @@ import org.w3c.dom.Element;
 
 public class XMLMaker {
 	
-	public DocumentBuilderFactory docDriverSetup;
+	protected DocumentBuilderFactory docDriverSetup;
 	
-	public DocumentBuilder driverSetup;
+	protected DocumentBuilder driverSetup;
 	
 	public int connectedDevices = 0;
 	
-	public Document doc;
+	protected Document doc;
 	
 	TransformerFactory transformerFactory = TransformerFactory.newInstance();
 	
@@ -50,10 +52,27 @@ public class XMLMaker {
 			
 			transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "http://testng.org/testng-1.0.dtd");
 			
+			Collections.shuffle(driverList);
+			
 			Element suiteElement = doc.createElement("suite");
 			suiteElement.setAttribute("name", "All-tests");
 			
+			File[] testPkgList = null;
+			int testPkgListSize = 0;
+			int devicePerSplitLimit = -1;
+			int perSplitCount = -1;
+			
+			
+			if(System.getProperty("split") != null && System.getProperty("split").equalsIgnoreCase("yes")) {
+				testPkgList = new File("./test/"+System.getProperty("package")).listFiles();
+				testPkgListSize = testPkgList.length;
+				System.out.println("test pkg size: "+ testPkgListSize);
+				devicePerSplitLimit = testPkgList.length/driverList.size();
+				perSplitCount = 0;
+			}
+			
 			for(DesiredCapabilities driverCap: driverList) {
+			
 			
 				Element testElement = doc.createElement("test");
 				suiteElement.appendChild(testElement);
@@ -106,6 +125,28 @@ public class XMLMaker {
 						classes.appendChild(classTag);
 					}
 				}
+				
+				else if(System.getProperty("split") != null && System.getProperty("split").equalsIgnoreCase("yes")) {
+					Element classes = doc.createElement("classes");
+					testElement.appendChild(classes);
+					while(perSplitCount < devicePerSplitLimit) {
+						Element classTag = doc.createElement("class");
+						classTag.setAttribute("name", System.getProperty("package")+"."+testPkgList[testPkgList.length-testPkgListSize].getName().replace(".java", ""));
+						classes.appendChild(classTag);
+						testPkgListSize--;
+						perSplitCount++;
+					}
+					perSplitCount = 0;
+					if(driverList.size() == (connectedDevices + 1)){
+						while(testPkgListSize-1 >= 0) {
+							Element classTag = doc.createElement("class");
+							classTag.setAttribute("name", System.getProperty("package")+"."+testPkgList[testPkgList.length-testPkgListSize].getName().replace(".java", ""));
+							classes.appendChild(classTag);
+							testPkgListSize--;
+						}
+					} 
+					
+				}
 				else {
 					Element packages = doc.createElement("packages");
 					testElement.appendChild(packages);
@@ -116,7 +157,7 @@ public class XMLMaker {
 				}
 						
 				connectedDevices++;
-			}	
+			}
 			suiteElement.setAttribute("parallel", "tests");
 			suiteElement.setAttribute("thread-count", connectedDevices+"");
 			doc.appendChild(suiteElement);
